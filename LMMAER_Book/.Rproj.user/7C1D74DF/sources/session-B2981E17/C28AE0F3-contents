@@ -1,0 +1,882 @@
+---
+title: "Review of MLR with categorical variables"
+output:
+  word_document:
+    fig_height: 4.5
+    fig_width: 8
+    reference_docx: mystyles_lecture.docx
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+options(show.signif.stars = FALSE)
+```
+
+## General schedule for class:
+
+- Nearly weekly homework (Alternating technical and statistical report, some individual, some in groups)
+
+- Weekly lab due on Friday (in groups, 3 or more)
+
+- Start with reviewing Chapter 11 in the Sleuth but with exploring "effects" plots
+
+- Midterm exam around middle of semester (short take home and 2 hour in class)
+
+- 512: Projects due before finals week (Note that 512 required for Grad Stat Certificate, can change to 412 from 512...)
+    
+  - 512 students have "Writing Studio" with members of writing center to facilitate projects (more details in project assignment)
+
+- Final exam during finals week (take home?)
+
+- Group work required - statistics is never done alone
+
+## Getting started:
+
+* Reporting of results:
+
+    - Report sample size in reports and any missing/deleted observations
+    
+    - "Evidence" sentence contains something like: We found XXX evidence against the null hypothesis of XXX (test statistic, dist under $H_0$, and p-value) controlled for ..., so we conclude that [something about alternative hypothesis].
+
+    - In this, report the value of the test statistic, its distribution under the null hypothesis (t, F, Chi-squared, permutation, standard normal for Z) AND that distribution's degrees of freedom (if exist). 
+    
+    - "Evidence" sentence (if not one-sided test) does not test for specific direction - direction is part of "size" sentence or general summary of results.
+	
+    - DO **NOT** just report degrees of freedom without a named distribution to associate it with.
+		
+    - Do report them efficiently as F(2,20) as opposed to F with 2 numerator and 20 denominator degrees of freedom.
+		
+    - You should always report results that correspond to the test being done (one-sided or two-sided) and **"controlling for" anything else in the model (be specific)**. 
+
+    - "Size" sentences interpret slope coefficient with CI where possible for any discussions of specific coefficients. 
+    
+    - In complex models (say with interactions or with many levels of categorical variables), "size" is related to pattern of results (see Ch 14) and so may not involve very specific numerical results and CIs
+	
+    - **NEVER use the word "significant"** in this class. Discuss strength of evidence that tests provide. The "s" word ("significant") is loaded and often misunderstood. Find a way to make your point without that word!
+	
+    - **"Data"** is a plural word unless you only have one subject and then you should be saying _datum_. This is hard. You are bombarded with the colloquial use of the term (and in Excel) that means "information" which is OK to use in a singular sense. Whenever writing "data" as a _now_ sophisticated, statistically-trained scientist, in your mind replace it with "things" and see how your sentence sounds. I will use negative reinforcement to train you in the correct use of this term as this is a grammar error.
+	
+    - Reserve the use of the term "effects" for the impacts of randomly assigned variables (where causal inference is reasonable) and "terms", "impacts of" or model "components" for the non-randomly assigned ones that are related to differences but might not cause them.
+    
+    - Run spell check on everything before submitting it (or use the live spellcheck in RStudio). Whether writing reports or short answers, this class emphasizes communicating statistical results and I will hold you to a high standard in everything you turn in.
+
+## Scope of inference:
+
+* Is a variable(s) randomized to subjects or not?
+
+\
+\
+\
+\
+
+
+* Are the subjects a random sample or not?
+
+\
+\
+\
+\
+
+    - What about a representative sample?
+
+
+\
+\
+\
+
+
+* What if you have a quantitative explanatory variable and decide to remove observations that are extreme on the explanatory variable?
+
+\
+\
+\
+\
+
+    - What if the removal is of an extreme response?
+
+
+\
+\
+
+* Suppose you took a sample of subjects and only happened to get 2 in a group of interest to you (out of, say, 5 groups)?
+
+
+\
+\
+\
+\
+
+
+* Time period of measurements matters:
+
+    - Years of the study - note that inferences to those year ONLY in scope of inference (unless analyzing a random sample of years and then it would be to the population of years sampled from)
+    
+    - Example: Data collected yearly from 1950 to 1980, only make inferences to 1950 to 1980 (and must note this in scope of inference discussion)
+    
+    - If data are just from a year or two, note those in study description if known - no implication that that year or two is representative of what would have happened in many others
+
+* Demographics of subjects similarly useful to describe
+
+## An example:
+
+* Niyazov et al. (2016) obtained data for the number of citations of articles (referenced in other articles/books) for all articles published and uploaded to academia.edu from 2009 to 2012 and a random sample of articles from crossref that were published in the same years but not posted on academia.edu.
+
+* Scope of inference:
+  
+    - The aspects of the papers used to predict citations are not randomly assigned, so we cannot have causal inferences for their impacts on the response.
+    
+    - The academia.edu papers are the entire population of papers but the others were a random sample of papers, so we can potentially infer that differences due to academia/not applies to the population of academia.edu papers and the population of all other papers. 
+    
+    - I am going to analyze a random sample of n=2,000 papers from the data set that contained 31K papers - so I can do inference for the population of academia.edu papers and, by taking a random sample of a random sample of all other papers, do inferences for all other papers.
+    
+* Research questions:
+
+    - Many listed, but most all focus on whether citations differ based on academia/not posting and whether the impacts of things like open access (available online/not) and impact factor on citations change based on being posted on academia/not, controlled for age of papers.
+  
+    - Note: Check author affiliations for more on "why" these were their research questions.
+
+* Assess independence assumption in model for citations:
+
+\
+\
+\
+\
+\
+\
+\
+
+
+Reference:
+
+* Niyazov, Y., Vogel, C., Price, R., Lund, B., Judd, B., Akil, A., Mortonson, M., Schwartzman, J., and Shron, M. (2016). Open Access Meets Discoverability: Citations to Articles Posted to Academia.edu. _PLoS ONE_ 11(2): e0148257. doi:10.1371/journal.pone.0148257
+
+Loading the data set (n=31,216) and some explorations:
+
+* Note: I think citations+1 could be reasonable to use here since it would count the current paper in the count to define a "publications involving this paper response" or "pubs" defined below.
+
+* The following R code was only run once to get the data set loaded and take a simple random sample of n=2,000 papers to analyze further:
+
+```{r warning=F, message=F,eval=F}
+install.packages('devtools') 
+devtools::install_github('polynumeral/academia-citations/acadcites')
+suppressMessages(library('acadcites'))
+cites <- importData()
+#More typical:
+#require(readr)
+#cites <- read_csv("C:/cites.csv") #Or read.csv
+
+dim(cites)
+ids <- 1:dim(cites)[1]
+set.seed(1234) #Use so always get the same random sample from the original data set
+
+#Randomly sample n=2,000 papers to analyze:
+cites_sample <- cites[sample(ids,2000),]
+
+require(readr)
+write_csv(cites_sample,"cites_sample.csv")
+```
+
+* This is the "real" code:
+
+```{r warning=F, message=F}
+suppressMessages(library(readr))
+cites_sample <- read_csv("cites_sample.csv") #Or read.csv
+#Works if data set is stored in same location as .Rmd file
+head(cites_sample)
+
+cites_sample$on_acad <- factor(cites_sample$on_acad) #Otherwise treated as quantitative variable
+
+#Change labels to be more explicit:
+levels(cites_sample$on_acad) <- c("NotOn","On")
+
+cites_sample$online <- factor(cites_sample$online)
+levels(cites_sample$online) <- c("NotOn","On")
+```
+
+## Alternatives to boxplots...
+
+* Boxplots display the 5 number summary (min, Q1, median, Q3, and max) and potentially some outlier information.
+
+* We analyze means (if possible).
+
+* Single observations may be flagged by outlier "rules" in boxplots that are not really outside the overall pattern (so not really outliers)
+
+* Boxplots will not detect multi-modal distributions, can have issues when multiple quartiles are tied, look the same regardless of sample size, and can be made with less than 5 observations in R (even though 5 lines are displayed)
+
+* So use `pirateplot`s (from the `yarrr` package, Phillips (2017)) or at least overlay points on top of boxplots (search internets for ggplot2 examples).
+
+    - Pirate-plots show original observations (jittered slightly horizontally and vertically), the group means (wide lines), confidence intervals for the means (use option inf.method="ci" to get regular CIs), and nonparametric density curves for each group.
+
+    - Pirate-plots can also extend into having more than one categorical explanatory variable (`pirateplot(y~x1*x2,data=..., inf.method="ci)`) - more later
+
+* Density plots help to visualize shape, means help to see what you usually analyzing, and seeing points helps to assess whether the plot features are misleading you.
+
+```{r warning=F,message=F, fig.width=7, fig.height=3.5}
+suppressMessages(library(yarrr))
+pirateplot(citations~on_acad,data=cites_sample,inf.method="ci")
+
+#Clear right-skew in citations and 0s common
+log(c(0,1,2,6))
+log(c(0,1,2,6),base = exp(1))
+log2(c(0,1,2,6))
+
+#log1p is a function specifically for natural log(x+1)
+log1p(c(0,1,2,6))
+par(mfrow=c(1,2))
+pirateplot(log1p(citations)~on_acad,data = cites_sample,
+           main = "Pirate plot of log-publications",inf.method="ci") #Bar is mean with 95% CI as box
+pirateplot(log1p(citations)~on_acad*online,data = cites_sample,
+           main = "Pirate plot of log-publications",inf.method="ci",theme=3,pal="southpark")
+#see https://cran.r-project.org/web/packages/yarrr/vignettes/pirateplot.html
+```
+
+Reference:
+
+*  Phillips, N. (2017). yarrr: A Companion to the e-Book "YaRrr!: The
+  Pirate's Guide to R". R package version 0.1.6. www.thepiratesguidetor.com
+
+## Table1
+
+* Descriptive statistics of variables are useful for helping readers understand your subjects...
+
+* Often summary of a suite of variables split by groups of the subjects in the study (by gender, treatment group) -- do the subjects in the two groups differ systematically on more than just the primary outcome?
+
+* Favorite function is `favstats` from the `mosaic` package (Pruim, Kaplan, and Horton, 2017)
+
+Reference: 
+
+* Pruim, R., Kaplan, D. and Horton, N. (2017) The mosaic Package: Helping Students to 'Think with Data' Using R. _The R Journal_, 9(1):77-102.
+
+```{r warning=F,message=F}
+summary(cites_sample$citations)
+suppressMessages(library(mosaic))
+favstats(citations~1,data=cites_sample)
+favstats(citations~on_acad,data=cites_sample)
+summary(cites_sample$citations[cites_sample$on_acad=="on"])
+```
+
+* Recent developments in "automation" possible - but you should be careful with default summaries and any tests as you might not really want to use the method that they automatically run...
+
+* The `furniture` package (Barrett et al., 2018) provides some quick descriptive statistics by focal variable groups using the `table1` function:
+
+```{r warning=T,message=F}
+suppressMessages(library(furniture))
+table1(cites_sample,
+       citations,impact_factor,online,age,
+       splitby = ~on_acad)
+
+table1(cites_sample,
+       citations,impact_factor,online,age,
+       splitby = ~on_acad, test=T)
+citation("furniture")
+```
+
+Reference:
+
+* Barrett, T., Brignone, E. and Laxman, D. (2018) furniture:  Furniture for Quantitative Scientists. R package version 1.7.6.
+
+## Modeling citations: Linear model version
+
+```{r warning=F,message=F, fig.width=7, fig.height=3.2}
+#Figure 3: Plot of log(citations+1)~log(impactfactor+1) 
+par(mfrow=c(1,2))
+plot(citations~impact_factor,data=cites_sample)
+plot(log1p(citations)~log1p(impact_factor),data=cites_sample) 
+
+#makeFigure(3,cites) #From their R package - code extracted below:
+#suppressMessages(library('acadcites'))
+#suppressMessages(library(ggplot2))
+p <- ggplot(cites_sample, aes(x=impact_factor, y=citations)) +
+        geom_point(position=position_jitter(height=.1, width=.01), alpha=.3, size=.75) +
+        geom_smooth(method='lm') + theme_bw() +
+        labs(x='Impact Factor (log scale)', y='Citations (log scale)')
+
+#       plotLogScale(p, x=c('x', 'y')) #Some issue in their code now...
+```
+
+* Reading in a png file from when code worked:
+
+![Figure 1. log-log plot with smoother.](loglogplot.png)
+
+
+* But was logging really necessary? Also want to explore impacts of age, online access/not, academia/not on citations
+
+```{r warning=F,message=F, fig.width=7, fig.height=5}
+source("concise_lm.R") #Function to clean up model output slightly when running 
+par(mfrow=c(2,2))
+plot(citations~impact_factor+age+on_acad+online,data=cites_sample)   
+model1<-lm(citations~impact_factor+age+on_acad+online,data=cites_sample)
+print(summary(model1),concise=T) #Or just summary(model1)
+par(mfrow=c(2,2))
+plot(model1)
+```
+
+* So there appear to be clear issues with the normality assumption for the residuals (QQ-plot shows severely right skewed residuals) 
+
+    - DO NOT USE THE WORD "DATA" when discussing QQ-plots from a model - be specific and note that this assesses whether the **residuals $\sim Normal$** 
+    
+* Note: 3 residuals are by default identified in R's diagnostic plot array. That does not mean they are problematic or outliers!
+
+* Non-constant variance issues suggested in the Residuals vs Fitted and Scale-Location plots.
+
+* More on Residuals vs Leverage plot later...
+
+Starting with a simple model with `log(pubs)` response and `impact_factor` and `on_acad` as predictors:
+
+* Theoretical model: $log(pubs) \sim N(\mu,\sigma^2)$ 
+
+* with $\mu\{log(pubs)|impact-factor,on-acad\}=\beta_0+\beta_1impactfactor+\beta_2I_{on-acad=T}$
+
+    - With the indicator (or dummy) variable $I_{onacad=T}$ equal to 1 if a paper was put onto academia.edu and 0 otherwise.
+
+```{r warning=F,message=F}
+cites_sample$logpub<-log1p(cites_sample$citations)
+model2<-lm(logpub~impact_factor+on_acad,data=cites_sample) 
+print(summary(model2),concise=T) #Report this if asked for model summary()
+confint(model2)
+```
+
+* Estimated model: $\hat{\mu}\{log(pubs)|impact-factor,on-acad\}=1.385+0.151impactfactor+0.21I_{onacad=On}$
+
+* Interps of the two slope coefficients on log-response scale:  
+
+    - ImpactFactor: For a 1 "point" increase in impact factor, the estimated mean log(publication) changes by 0.151 log-pubs, controlled for being published on academia.edu or not (95% CI: 0.137 to 0.165). 
+
+    - On_Acad: Being posted to academia.edu is related to having an estimated mean 0.21 log-pubs higher than papers not posted there, controlling for impact factor of the journals (95% CI: 0.098 to 0.324).
+
+* Or on the original "pubs" scale - need to $exp(\hat{\beta}_i)$ to get multiplicative changes in median:
+
+    - ImpactFactor: For a 1 point increase in impact factor, the estimated median publication is `r round(exp(0.151),3)` times more, controlled for being published on academia.edu or not (95% CI: exp(0.137) to exp(0.165)). 
+    
+    - On_Acad: Being posted to academia.edu is related to having an estimated **median** "pubs" that are `r round(exp(0.21),3)` times higher than papers not posted there, controlling for impact factor of the journals (95% CI: exp(0.098) to exp(0.324)).
+
+* Reporting of the two test results ("evidence" sentences):
+
+    - There is strong evidence against the null hypothesis of no impact of _impact factor_ on the mean log-publications ($t_{1997}=20.71$, two-sided p-value=0.0001) after controlling for publication on academia.edu/not, so we would conclude that there is an impact of _impact factor_ on the response.
+    
+    - There is strong evidence against the null hypothesis of no difference in mean log-publications based on posting to academia.edu/not ($t_{1997}=3.67$, two-sided p-value=0.00025) after controlling for impact factor of the journal, so we would conclude that there is some difference in mean log-publications based on posting to academia/not.
+    
+
+## Term-plots or Effects plots:
+
+* The `effects` package attempts to display each individual estimated model components across levels of that variable while holding each component at the mean (for quantitative variables) or mode (for categorical variables) of the other variables.
+
+* It also provides 95% confidence intervals for the estimated means it displays
+
+    - Its basic code is `plot(allEffects(modelname))`
+
+```{r warning=F,message=F, fig.width=7, fig.height=3.5}
+summary(cites_sample$impact_factor)
+summary(cites_sample$on_acad)
+suppressMessages(library(effects))
+plot(allEffects(model2))
+```
+
+* What was the mode for `on_acad` in the data set analyzed? Given that information, how is the plot for `impactfactor` made? 
+
+\
+\
+
+    - What is the magnitude of change in log(pubs) over the displayed range in the impact factors? Is this a big change?
+    
+\
+\
+\
+
+    - How is the effects plot calculated for the `on_acad` variable?
+
+\
+\
+\
+\
+\
+
+* So we could make our own _impact_factor_ effect plot:
+
+```{r warning=F,message=F, fig.width=7, fig.height=3.5}
+IF_grid <- seq(from=min(cites_sample$impact_factor),to=max(cites_sample$impact_factor),length.out=30)
+fits <- 1.385+0.151*IF_grid
+plot(fits ~ IF_grid,type="l")
+#Or plotting the model with a line for both academia groups:
+
+par(mfrow=c(1,2)) #makes a 1 by 2 panel array for plot
+plot(fits ~ IF_grid,type="l") #Re-plot for the non-academia results
+
+fits_ac <- 1.385+0.151*IF_grid+0.21
+
+lines(fits_ac ~ IF_grid,lwd=2,col="red",lty=2) #Adds line to previos plot
+legend("topleft", lwd=c(1,2), col=c(1,2), lty=c(1,2), legend=c("Non-Acad","Acad"))
+#Or on the original "pubs" scale:
+plot(exp(fits) ~ IF_grid,type="l",ylim=c(0,max(exp(fits_ac)))) 
+lines(exp(fits_ac) ~ IF_grid,lwd=2,col="red",lty=2)
+legend("topleft", lwd=c(1,2), col=c(1,2), lty=c(1,2), legend=c("Non-Acad","Acad"))
+```
+
+* To make the "on_acad" term-plot, you need to hold impact factor at its mean value.
+
+* Citation:  Fox, J. (2003) Effect Displays in R for Generalised Linear Models. _Journal of Statistical Software_, 8(15), 1-27. URL
+  http://www.jstatsoft.org/v08/i15/.
+
+## Design or model matrices
+
+* How is `lm` handling the `on_acad` variable? 
+
+\
+\
+\
+
+__
+
+* Let's try the `model.matrix` function on `model2`:
+
+```{r message=F,warning=F}
+head(model.matrix(model2),10)
+cites_sample[c(1:10),c("impact_factor","on_acad")]
+```
+
+
+* The general formulation for a linear model in matrix notation is 
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+
+* The ordinary least squares estimate of $\beta$ is:
+
+\
+\
+\
+\
+\
+
+__
+
+## Interactions (Quant by Cat):
+
+* The `effects` package is also useful for helping to visualize model-estimated interactions:
+
+    - Let's consider whether `on_acad` and `impactfactor` interact on their _impacts_ on `log(pubs)` (note that I did not say **effect**):
+
+
+```{r warning=F,message=F, fig.width=7, fig.height=3.5}
+suppressMessages(library(car))
+scatterplot(logpub~impact_factor|on_acad,data=cites_sample,smooth=list(spread=F)) #Plot of y~x by groups
+model3<-lm(logpub~impact_factor*on_acad,data=cites_sample)  #Using * implies that the main effects (individual variables) are in the model
+print(summary(model3),concise=T) 
+confint(model3)
+plot(allEffects(model3),grid=T)
+#Better version with interactions - easier to compare slopes of lines
+plot(allEffects(model3),multiline=T,grid=T,ci.style="bands",lty=c(1,2)) 
+```
+
+* What is the estimated model? Also simplify the model for on/off academia...
+
+
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+
+* What is the test for an interaction suggesting here?
+
+\
+\
+
+* In the full data set with $n$ over 31K, the interaction had a similar slope coefficient estimate but a small p-value, how can you explain this?
+
+\
+\
+\
+
+* What did `effects` do to visualize the interaction? Was it successful?
+
+
+\
+\
+
+* What does this suggest about the changes in the impacts of impact factor on the log-pubs based on posted to academia or not?
+
+\
+\
+\
+
+* Let's see how `lm` setup the design matrix for this model
+
+```{r message=F,warning=F}
+head(model.matrix(model3),10)
+```
+
+## Full model for log-pubs:
+
+In the paper, they consider different models to handle the response variable differently and do some re-scaling of predictors we will discuss later... 
+
+* Their full model (Table 10) involves interactions between on-academia with log(impact factor+1), log(age), and online/not as well as all the main effects, and a variable related to topic keywords:
+
+
+```{r warning=F,message=F, fig.width=7, fig.height=3.5}
+cites_sample$logIF<-log1p(cites_sample$impact_factor) #effects will "undo" the logs if used in formula interface
+cites_sample$logage<-log(cites_sample$age) #had to check code to verify this...
+
+model4<-lm(logpub~logIF*on_acad+logage*on_acad+on_acad*online,data=cites_sample) 
+plot(allEffects(model4),1,multiline=T,ci.style="bands",grid=T,lty=c(1,2))
+plot(allEffects(model4),2,multiline=T,ci.style="bands",grid=T,lty=c(1,2))
+plot(allEffects(model4),3,multiline=T,ci.style="bars",grid=T,lty=c(1,2))
+print(summary(model4),concise=T)
+```
+
+## GLMs (Chapters 20, 21, and 22):
+
+* Response variables may not be suitably modeled by linear models
+
+* Other common kinds of responses: Binary (success/failure), Grouped Binomial (set of m binary trials observed together, count of successes OUT OF TOTAL), and Poisson (count)
+
+* In academia study:
+
+    - Citations are reasonable to consider as counts with no upper limit so model as Poisson
+    
+    - Cited/not would be a possibly binary response
+    
+    - Count of open access journals where citations were present (count of open access out of total citations) would be a grouped binomial response
+    
+* These types of responses (and some others we won't discuss) fit into _generalized linear models_ (GLMs)
+
+* Linear models are special cases of GLMs
+
+* GLMs require three aspects to be defined: (1) Random component = distribution of the response, (2) Systematic component, and (3) link function
+
+* Random component for three common GLMs (also called the "family"):
+
+\
+\
+\
+\
+\
+\
+\
+\
+
+* Examples of the distributions are provided:
+
+```{r warning=F,message=F,fig.width=10,fig.height=8}
+xc <- seq(from=-20,to=20,length.out=300)
+par(mfrow=c(3,4))
+y1 <- dnorm(xc,mean=0,sd=1)
+y2 <- dnorm(xc,mean=4,sd=1)
+y3 <- dnorm(xc,mean=-4,sd=5)
+y4 <- dnorm(xc,mean=-4,sd=1)
+plot(y1~xc,type="l")
+rug(rnorm(50,mean=0,sd=1),col="red")
+plot(y2~xc,type="l")
+rug(rnorm(50,mean=4,sd=1),col="red")
+plot(y3~xc,type="l")
+rug(rnorm(50,mean=-4,sd=5),col="red")
+plot(y4~xc,type="l")
+rug(rnorm(50,mean=-4,sd=1),col="red")
+xb <- 0:30
+plot(dbinom(xb,size=5,prob=.1)~xb,type="h",main="5 trials, 0.1")
+plot(dbinom(xb,size=30,prob=.1)~xb,type="h",main="30 trials, 0.1")
+plot(dbinom(xb,size=5,prob=.5)~xb,type="h",main="5 trials, 0.5")
+plot(dbinom(xb,size=30,prob=.5)~xb,type="h",main="30 trials, 0.5")
+
+xp <- 0:30
+plot(dpois(xp,lambda=0.5)~xp,type="h",main="Mean 0.5")
+plot(dpois(xp,lambda=3)~xp,type="h",main="Mean 3")
+plot(dpois(xp,lambda=15)~xp,type="h",main="Mean 15")
+xp <- 0:100
+plot(dpois(xp,lambda=30)~xp,type="h",main="Mean 50")
+```
+
+* Systematic component (this is the X's and $\beta$'s) that explain results on the link scale:
+
+    - Uses same techniques for setting up design matrix for quantitative predictors and indicators and interactions and some similar model interrogation and interpretation tools
+    
+    - Everything is "linear on the link scale" - basically interpret results on the link-scale units with no modification (see below)
+    
+    - $g(\mu)=\beta_0+\beta_1X_1+\beta_2X_2+...+\beta_pX_p$
+    
+* Link functions are continuous, monotonic functions (need inverse to exist) that relate the mean of the distribution to the linear combination of the $\beta$'s and predictors.
+
+    - Normal response link: $g(\mu)=\mu$ (called the identity link)
+    
+    - Binary or binomial response link: $g(\pi)=logit(\pi)$ (called the logit link, units are "log-odds")
+    
+    - Poisson response link: $g(\mu)=log(\mu)$ (log-link)
+    
+* Much more later in the semester, but here are two quick examples:
+
+## Poisson model for Citations
+
+* Poisson models are run on the original counts - do not log-transform the responses with a log-link (sometimes called Poisson log-linear models)
+
+* Can retain count of 0s 
+
+* If counts are divided by time or space or volume and fractional, analyze original counts and use an "offset" based on the log-time, log-space, or log-volume (see Poisson rate models, Ch 22)
+
+* Coefficients on the log-mean scale, exponentiating coefficients relates to mean count or multiplicative changes in mean count
+
+* Example: Poisson GLM with _impactfactor_ and _onacad_ for citation counts:
+
+* Theoretical model: 
+
+\
+\
+\
+
+* Visualize log(counts+1?) vs each predictor for potential initial data visualization - Better than counts vs each predictor
+
+```{r warning=F,message=F, fig.width=7, fig.height=3.25}
+glm2 <- glm(citations~impact_factor+on_acad,data=cites_sample,family=poisson) 
+summary(glm2)$coefficients
+confint(glm2)
+require(effects)
+plot(allEffects(glm2),type="link")
+plot(allEffects(glm2),type="response")
+```
+
+* Interpretation of coefficients on the link (here log mean count) scale:
+
+    - For a 1 point(?) increase in the impact factor of the journal, we estimate that the log-mean number of citations will change by 0.085 log-citations (95% CI: 0.083 to 0.086), controlling for being posted on academia/not.
+    
+    - An article posted on academia.edu is estimated to have 0.1899 log-mean more citations than one that is not (95% CI: 0.156 to 0.223), adjusting for the impact factor of the journal.
+    
+* Interpretation on the response (here mean count) scale:
+
+    - For a 1 point(?) increase in the impact factor of the journal, we estimate that the **mean** number of citations will change by exp(0.085)=`r round(exp(0.085),3)` times (95% CI: exp(0.083) to exp(0.086)), controlling for being posted on academia/not.
+    
+    - An article posted on academia.edu is estimated to have exp(0.1899)=`r round(exp(0.1899),3)` times more citations, on average, than one that is not (95% CI: exp(0.156) to exp(0.223)), adjusting for the impact factor of the journal.
+
+* More on this, testing, and diagnostics at the end of the semester...
+
+## Logistic regression model for cited/not:
+
+* Instead of modeling counts, we now model a binary outcome for each paper that is a success (cited) or failure (not cited)
+
+    - Need to carefully define/check definition for "success"
+
+* Papers without citations are relatively rare (11%) and basically 100% probability of citation if in extremely high impact factor journal, so very high predicted probabilities in model and some indications of "separation" (See Chapters 20 and 21)
+
+* Theoretical model:
+
+\
+\
+\
+\
+
+```{r warning=F,message=F, fig.width=7, fig.height=3.5}
+mean(cites_sample$citations>0)
+cites_sample$cited <- factor(ifelse(cites_sample$citations>0,"Cited","NotCited"))
+table(cites_sample$cited,cites_sample$citations)[,1:5] #Checking definitions
+levels(cites_sample$cited)
+cites_sample$cited <- relevel(cites_sample$cited,"NotCited") #Make NotCited baseline category so Cited is a success
+par(mfrow=c(1,2))
+cdplot(cited~impact_factor,data=cites_sample)
+rug(cites_sample$impact_factor,add=T,col="red")
+cdplot(cited~impact_factor,data=cites_sample,bw=2) #Default smoothing level has issues, try different numbers for bw if cdplot is "weird"
+rug(cites_sample$impact_factor,add=T,col="red")
+par(mfrow=c(1,1))
+plot(cited~on_acad,data=cites_sample) #Stacked bar chart for cat response versus cat predictor
+
+glm_bin <- glm(cited~impact_factor+on_acad,data=cites_sample,family=binomial)
+summary(glm_bin)$coefficients
+confint(glm_bin)
+plot(allEffects(glm_bin),type="link")
+plot(allEffects(glm_bin),type="response")
+```
+
+* Logistic regression models provide results on the mean log-odds of success scale:
+
+    - For a 1 point(?) increase in the impact factor of the journal, we estimate that the mean log-odds of a paper being cited will change by 0.689 (95% CI: 0.558 to 0.828), controlling for being posted on academia/not.
+    
+    - An article posted on academia.edu is estimated to have 1.058 higher mean log-odds of being cited than one that is not (95% CI: 0.588 to 1.585), adjusting for the impact factor of the journal.
+    
+* Interpretation on the odds scale:
+
+    - For a 1 point(?) increase in the impact factor of the journal, we estimate that the **mean** odds of being cited will change by exp(0.689)=`r round(exp(0.689),3)` times (95% CI: exp(0.558) to exp(0.828)), controlling for being posted on academia/not.
+    
+    - An article posted on academia.edu is estimated to have exp(1.058)=`r round(exp(1.058),3)` times mean odds of being cited than one that is not (95% CI: exp(0.588) to exp(1.585)), adjusting for the impact factor of the journal.
+
+* Much more later in the semester on these models after we discuss more complex linear and linear mixed models...
+
+## ESS F-tests for LINEAR MODELS:
+
+For the following, we need some simpler models to consider relative to their "full" model:
+
+```{r warning=F,message=F}
+model5<-lm(logpub~logIF+on_acad+logage+online,data=cites_sample) #No interactions
+model6<-lm(logpub~logIF*on_acad,data=cites_sample) # Just IF*on_acad
+model7<-lm(logpub~logIF+on_acad,data=cites_sample) # Just IF+on_acad
+```
+
+* How might we determine whether we need the full model (`model4`) versus a simpler model (say one that does not have any interactions, `model5`)?
+
+\
+\
+\
+\
+\
+\
+
+
+* What about `model6` versus `model7`?
+
+\
+\
+\
+
+
+* What about `model5` versus `model6`?
+
+\
+\
+\
+
+
+## ESS F-tests in R:
+
+* Extra sums of squares = 
+
+\
+\
+\
+
+* ESS F-statistic = 
+
+
+\
+\
+\
+
+* model4 vs model 5:
+
+```{r}
+anova(model5,model4)
+```
+
+* Looking up p-values from F-distributions using `pf(F,df1=...,df2=...,lower.tail=F)`:
+
+\
+\
+\
+\
+
+```{r}
+Fstat<-(4.2929/3)/(1478.2/1992)
+Fstat
+pf(Fstat,df1=3,df2=1992,lower.tail=F)
+```
+
+* Report the result: There is weak evidence against the null hypothesis that we don't need to include the interactions between on-academia and the logIF, logage, and online/not for their impacts on the log-pubs vs a model with these same variables but no interactions (F(3,1992)=1.93, p-value=0.1223).
+
+
+* What about `model6` versus `model7`?
+
+```{r message=F,warning=F}
+anova(model7,model6)
+```
+
+* What about `model5` versus `model6`?
+
+```{r message=F,warning=F}
+anova(model6,model5)
+```
+
+* Note: ESS F-tests are only valid for nested models and when making comparisons of exactly the same response variable and observations
+
+    - Be careful with model comparisons if some predictors have missing values - _n_ might change in different models!
+
+## Type I F-tests:
+
+* There are three or more "Types" of F-tests that involve different ways of constructing the components of the F-statistics. 
+
+* Type I tests are tests that are constructed as conditional on any model components higher up in the table. These are what the `anova` function returns with the last row in the table being equivalent to the ESS F-test for that last model component. 
+
+* To make this all a little more interesting, let's create a 4-level categorical variable from the combinations of `on_acad` and `online` using the `interaction` function (`model8_alt`) and then compare it to models with our "regular" 2x2 interaction (`model8`) but no other interactions and a model that drops online and academia/not (`model9`).
+
+* `model8` includes the interaction of the two variables and `model8_alt` uses this new version of `acad_online`.
+
+```{r warning=F,message=F, fig.width=7, fig.height=3}
+cites_sample$acad_online<-with(cites_sample,interaction(on_acad,online))
+summary(cites_sample$acad_online)
+table(cites_sample$acad_online,cites_sample$on_acad)
+model8<-lm(logpub~logIF+logage+on_acad*online,data=cites_sample) #acad and online interaction and main effects model with logIF and logage
+print(summary(model8),concise=T)
+model8_alt<-lm(logpub~logIF+logage+acad_online,data=cites_sample) #acad and online 4 level variable with logIF and logage
+print(summary(model8_alt),concise=T)
+```
+
+* R-squared: Percent of variation in the **response** that is explained by the model that contains...
+
+```{r warning=F,message=F, fig.width=7, fig.height=3}
+anova(model8,model8_alt) #Models with gender*union vs gender_union
+require(effects)
+plot(allEffects(model8_alt),1,grid=T)
+plot(allEffects(model8_alt),2,grid=T)
+plot(allEffects(model8_alt),3,grid=T)
+model9<-lm(logpub~logIF+logage,data=cites_sample) #just logIF and logage
+anova(model9,model8_alt) 
+```
+
+\
+\
+\
+\
+
+
+
+## Different Types of F-tests
+
+* The first row in a "Type I" table (what `anova` on a single model provides) is not tested conditionally on any other model components (even though the denominator of the test statistic (_MSE_) is based on the entire model being fit). 
+
+    - The results do not match the t-test results (note that for a single coefficient, you can convert a _t_ to an _F_ statistic using $t^2$ with _m_ df = _F(1,m))_ because the hypotheses being tested differ.
+
+```{r message=F,warning=F}
+summary(model8_alt)$coef
+anova(model8_alt)
+28.767900^2 #squared t-statistic for logIF (should match F if testing same hypotheses)
+15.350669^2 #t-statistic for logage squared
+```
+    
+
+* In balanced and orthogonal designs, the results do not change based on "conditioning" on other variables
+    
+    - In designs with quantitative predictors and other unbalanced designs, conditioning (or not) will change results.
+    
+    - Usually more conservative inferences occur when you control for other variables.
+
+* t-tests and slope coefficients are conditioned on all model components, so how can we get the same result for F-tests?
+
+    - Option 1: ESS or `Type I` F-tests with each model component last in the list model components (involves re-fitting the model over and over again)
+    
+    - Option 2: `Type II` F-tests that provide the results of re-fitting the model with each component* last in the list of model components so it conditions on all other variables - available using `Anova()` from the `car` package.
+    
+    - *note that it only conditions on components at the same levels (main effects, 2-way interactions, 3-way interactions, etc.)
+    
+    - Option 3: `Type III` F-tests that are conditional on all other tests (so main effects are conditional on interactions)... Sometimes of interest but also can do some odd things since we typically consider interactions and then drop if not needed - available using `Anova(modelname,type="III")`
+    
+* An example of testing different ways:
+
+```{r message=F,warning=F}
+model8_alt2<-lm(logpub~acad_online+logIF+logage,data=cites_sample) 
+anova(model8_alt2)
+require(car) #Needed to use the Anova() function
+Anova(model8_alt2) #Defaults into Type II and what we will typically use
+Anova(model8_alt2, type="III")
+```
+
+
+* There is strong evidence against the null hypothesis of no difference in the true mean log-pubs across the combinations of on-academia and online (F(3,1994)=27.775, p-value<0.0001) after controlling for logIF and log-age of the publications, so we would conclude that there is some difference in the mean log-pubs across the combinations.

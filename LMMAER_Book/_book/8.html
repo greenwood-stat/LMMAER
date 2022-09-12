@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="8.4 Multiple (pair-wise) comparisons using Tukey’s HSD and the compact letter display | Linear Mixed Models with Applications and Extensions in R" />
+<meta property="og:type" content="book" />
+
+
+<meta name="github-repo" content="greenwood-stat/LMMAER" />
+
+<meta name="author" content="Mark C Greenwood" />
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta name="description" content="8.4 Multiple (pair-wise) comparisons using Tukey’s HSD and the compact letter display | Linear Mixed Models with Applications and Extensions in R">
+
+<title>8.4 Multiple (pair-wise) comparisons using Tukey’s HSD and the compact letter display | Linear Mixed Models with Applications and Extensions in R</title>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="libs/navigation-1.1/tabsets.js"></script>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="toc.css" type="text/css" />
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+/* show arrow before summary tag as in bootstrap
+TODO: remove if boostrap in updated in html_document (rmarkdown#1485) */
+details > summary {
+  display: list-item;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container-fluid main-container">
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li><a href="index.html#cover" id="toc-cover">Cover</a></li>
+<li><a href="acknowledgments.html#acknowledgments" id="toc-acknowledgments">Acknowledgments</a></li>
+<li class="has-sub"><a href="1-chapter1.html#chapter1" id="toc-chapter1"><span class="toc-section-number">1</span> Preface</a>
+<ul>
+<li><a href="1.html#section1-1" id="toc-section1-1"><span class="toc-section-number">1.1</span> Overview of methods</a></li>
+<li><a href="1.html#section1-2" id="toc-section1-2"><span class="toc-section-number">1.2</span> Getting started in R</a></li>
+<li><a href="1.html#section1-3" id="toc-section1-3"><span class="toc-section-number">1.3</span> Basic summary statistics, histograms, and boxplots using R</a></li>
+<li><a href="1.html#section1-4" id="toc-section1-4"><span class="toc-section-number">1.4</span> R Markdown</a></li>
+<li><a href="1.html#section1-5" id="toc-section1-5"><span class="toc-section-number">1.5</span> Grammar of Graphics</a></li>
+<li><a href="1.html#section1-6" id="toc-section1-6"><span class="toc-section-number">1.6</span> Exiting RStudio</a></li>
+<li><a href="1.html#section1-7" id="toc-section1-7"><span class="toc-section-number">1.7</span> Chapter summary</a></li>
+<li><a href="1.html#section1-8" id="toc-section1-8"><span class="toc-section-number">1.8</span> Summary of important R code</a></li>
+<li><a href="1.html#section1-9" id="toc-section1-9"><span class="toc-section-number">1.9</span> Practice problems</a></li>
+</ul></li>
+<li class="has-sub"><a href="2-chapter2.html#chapter2" id="toc-chapter2"><span class="toc-section-number">2</span> Linear Models: A Review</a>
+<ul>
+<li><a href="2.html#section2-1" id="toc-section2-1"><span class="toc-section-number">2.1</span> Linear regression models, assumptions</a></li>
+<li><a href="2.html#section2-2" id="toc-section2-2"><span class="toc-section-number">2.2</span> Pirate-plots</a></li>
+<li><a href="2.html#section2-3" id="toc-section2-3"><span class="toc-section-number">2.3</span> Models, hypotheses, and permutations for the two sample mean situation</a></li>
+<li><a href="2.html#section2-4" id="toc-section2-4"><span class="toc-section-number">2.4</span> Permutation testing for the two sample mean situation</a></li>
+<li><a href="2.html#section2-5" id="toc-section2-5"><span class="toc-section-number">2.5</span> Hypothesis testing (general)</a></li>
+<li><a href="2.html#section2-6" id="toc-section2-6"><span class="toc-section-number">2.6</span> Connecting randomization (nonparametric) and parametric tests</a></li>
+<li><a href="2.html#section2-7" id="toc-section2-7"><span class="toc-section-number">2.7</span> Second example of permutation tests</a></li>
+<li><a href="2.html#section2-8" id="toc-section2-8"><span class="toc-section-number">2.8</span> Reproducibility Crisis: Moving beyond p &lt; 0.05, publication bias, and multiple testing issues</a></li>
+<li><a href="2.html#section2-9" id="toc-section2-9"><span class="toc-section-number">2.9</span> Confidence intervals and bootstrapping</a></li>
+<li><a href="2.html#section2-10" id="toc-section2-10"><span class="toc-section-number">2.10</span> Bootstrap confidence intervals for difference in GPAs</a></li>
+<li><a href="2.html#section2-11" id="toc-section2-11"><span class="toc-section-number">2.11</span> Chapter summary</a></li>
+<li><a href="2.html#section2-12" id="toc-section2-12"><span class="toc-section-number">2.12</span> Summary of important R code</a></li>
+<li><a href="2.html#section2-13" id="toc-section2-13"><span class="toc-section-number">2.13</span> Practice problems</a></li>
+</ul></li>
+<li class="has-sub"><a href="3-chapter3.html#chapter3" id="toc-chapter3"><span class="toc-section-number">3</span> Identifying the Model: Study designs/sampling methods</a>
+<ul>
+<li><a href="3.html#section3-1" id="toc-section3-1"><span class="toc-section-number">3.1</span> “Measurement” structure</a></li>
+<li><a href="3.html#section3-2" id="toc-section3-2"><span class="toc-section-number">3.2</span> “Measurement” diagrams</a></li>
+<li><a href="3.html#section3-3" id="toc-section3-3"><span class="toc-section-number">3.3</span> Effective sample size and degrees of freedom</a></li>
+<li><a href="3.html#section3-4" id="toc-section3-4"><span class="toc-section-number">3.4</span> Visualizing observed predictors</a></li>
+<li><a href="3.html#section3-5" id="toc-section3-5"><span class="toc-section-number">3.5</span> Multiple (pair-wise) comparisons using Tukey’s HSD and the compact letter display</a></li>
+</ul></li>
+<li class="has-sub"><a href="4-chapter4.html#chapter4" id="toc-chapter4"><span class="toc-section-number">4</span> Identifying the Model: Response</a>
+<ul>
+<li><a href="4.html#section4-1" id="toc-section4-1"><span class="toc-section-number">4.1</span> Situation</a></li>
+<li><a href="4.html#section4-2" id="toc-section4-2"><span class="toc-section-number">4.2</span> The generalized linear model</a></li>
+<li><a href="4.html#section4-3" id="toc-section4-3"><span class="toc-section-number">4.3</span> Multiple (pair-wise) comparisons using Tukey’s HSD and the compact letter display</a></li>
+</ul></li>
+<li class="has-sub"><a href="5-chapter5.html#chapter5" id="toc-chapter5"><span class="toc-section-number">5</span> Data visualization and data wrangling for hierarchical data</a>
+<ul>
+<li><a href="5.html#section5-1" id="toc-section5-1"><span class="toc-section-number">5.1</span> Situation</a></li>
+<li><a href="5.html#section5-2" id="toc-section5-2"><span class="toc-section-number">5.2</span> Data wrangling for longitudinal data</a></li>
+<li><a href="5.html#section5-3" id="toc-section5-3"><span class="toc-section-number">5.3</span> Data visualizations and summaries for missing data</a></li>
+<li><a href="5.html#section5-4" id="toc-section5-4"><span class="toc-section-number">5.4</span> Data vizualizations for non-normal responses</a></li>
+<li><a href="5.html#section5-5" id="toc-section5-5"><span class="toc-section-number">5.5</span> Multiple (pair-wise) comparisons using Tukey’s HSD and the compact letter display</a></li>
+</ul></li>
+<li class="has-sub"><a href="6-chapter6.html#chapter6" id="toc-chapter6"><span class="toc-section-number">6</span> Non-constant variance models</a>
+<ul>
+<li><a href="6.html#section6-1" id="toc-section6-1"><span class="toc-section-number">6.1</span> Situation</a></li>
+<li><a href="6.html#section6-2" id="toc-section6-2"><span class="toc-section-number">6.2</span> Extended regression models</a></li>
+<li><a href="6.html#section6-3" id="toc-section6-3"><span class="toc-section-number">6.3</span> Specific non-constant variance models</a></li>
+<li><a href="6.html#section6-4" id="toc-section6-4"><span class="toc-section-number">6.4</span> Weighted regression models</a></li>
+<li><a href="6.html#section6-5" id="toc-section6-5"><span class="toc-section-number">6.5</span> Multiple (pair-wise) comparisons using Tukey’s HSD and the compact letter display</a></li>
+</ul></li>
+<li class="has-sub"><a href="7-chapter7.html#chapter7" id="toc-chapter7"><span class="toc-section-number">7</span> Linear Mixed Models (Two-levels)</a>
+<ul>
+<li class="has-sub"><a href="7.html#section7-1" id="toc-section7-1"><span class="toc-section-number">7.1</span> Situation</a>
+<ul>
+<li><a href="7.html#sub-sub-section-section7-1-1" id="toc-sub-sub-section-section7-1-1"><span class="toc-section-number">7.1.1</span> Sub-sub section? {section7-1-1}</a></li>
+</ul></li>
+<li><a href="7.html#section7-2" id="toc-section7-2"><span class="toc-section-number">7.2</span> Random intercept</a></li>
+<li><a href="7.html#section7-3" id="toc-section7-3"><span class="toc-section-number">7.3</span> Comparing fixed to random effect grouping variable</a></li>
+<li><a href="7.html#section7-4" id="toc-section7-4"><span class="toc-section-number">7.4</span> Design effect, variation explained, and intra-class correlation</a></li>
+<li><a href="7.html#section7-5" id="toc-section7-5"><span class="toc-section-number">7.5</span> Random intercept and random slope</a></li>
+<li><a href="7.html#section7-6" id="toc-section7-6"><span class="toc-section-number">7.6</span> Inference for fixed and random effects</a></li>
+<li><a href="7.html#section7-7" id="toc-section7-7"><span class="toc-section-number">7.7</span> Decomposing fixed effects: aggregating and centering</a></li>
+<li><a href="7.html#section7-8" id="toc-section7-8"><span class="toc-section-number">7.8</span> Diagnostics for linear mixed models</a></li>
+<li><a href="7.html#section7-9" id="toc-section7-9"><span class="toc-section-number">7.9</span> Curvature and random slopes</a></li>
+<li><a href="7.html#section7-10" id="toc-section7-10"><span class="toc-section-number">7.10</span> Multiple (pair-wise) comparisons using Tukey’s HSD and the compact letter display</a></li>
+</ul></li>
+<li class="has-sub"><a href="8-chapter8.html#chapter8" id="toc-chapter8"><span class="toc-section-number">8</span> Linear Mixed Models (More than two levels)</a>
+<ul>
+<li><a href="8.html#section8-1" id="toc-section8-1"><span class="toc-section-number">8.1</span> Situation</a></li>
+<li><a href="8.html#section8-2" id="toc-section8-2"><span class="toc-section-number">8.2</span> Nested random effects</a></li>
+<li><a href="8.html#section8-3" id="toc-section8-3"><span class="toc-section-number">8.3</span> Non-nested (crossed) random effects</a></li>
+<li><a href="8.html#section8-4" id="toc-section8-4"><span class="toc-section-number">8.4</span> Multiple (pair-wise) comparisons using Tukey’s HSD and the compact letter display</a></li>
+</ul></li>
+<li class="has-sub"><a href="9-chapter9.html#chapter9" id="toc-chapter9"><span class="toc-section-number">9</span> Generalized Additive Models (GAMs)</a>
+<ul>
+<li><a href="9.html#section9-1" id="toc-section9-1"><span class="toc-section-number">9.1</span> Situation</a></li>
+<li><a href="9.html#section9-2" id="toc-section9-2"><span class="toc-section-number">9.2</span> Multiple (pair-wise) comparisons using Tukey’s HSD and the compact letter display</a></li>
+</ul></li>
+<li class="has-sub"><a href="10-chapter10.html#chapter10" id="toc-chapter10"><span class="toc-section-number">10</span> Temporal autocorrelation</a>
+<ul>
+<li><a href="10.html#section10-1" id="toc-section10-1"><span class="toc-section-number">10.1</span> Situation</a></li>
+<li><a href="10.html#section10-2" id="toc-section10-2"><span class="toc-section-number">10.2</span> Time series models</a></li>
+<li><a href="10.html#section10-3" id="toc-section10-3"><span class="toc-section-number">10.3</span> Longitudinal data models</a></li>
+<li><a href="10.html#section10-4" id="toc-section10-4"><span class="toc-section-number">10.4</span> Multiple (pair-wise) comparisons using Tukey’s HSD and the compact letter display</a></li>
+</ul></li>
+<li class="has-sub"><a href="11-chapter11.html#chapter11" id="toc-chapter11"><span class="toc-section-number">11</span> Spatial correlation</a>
+<ul>
+<li><a href="11.html#section11-1" id="toc-section11-1"><span class="toc-section-number">11.1</span> Situation</a></li>
+<li><a href="11.html#section11-2" id="toc-section11-2"><span class="toc-section-number">11.2</span> Multiple (pair-wise) comparisons using Tukey’s HSD and the compact letter display</a></li>
+</ul></li>
+<li class="has-sub"><a href="12-chapter12.html#chapter12" id="toc-chapter12"><span class="toc-section-number">12</span> Generalized linear models</a>
+<ul>
+<li><a href="12.html#section12-1" id="toc-section12-1"><span class="toc-section-number">12.1</span> Situation</a></li>
+<li><a href="12.html#section12-2" id="toc-section12-2"><span class="toc-section-number">12.2</span> Binary logistic regression</a></li>
+<li><a href="12.html#section12-3" id="toc-section12-3"><span class="toc-section-number">12.3</span> GLM estimation and the woes of logistic regression</a></li>
+<li><a href="12.html#section12-4" id="toc-section12-4"><span class="toc-section-number">12.4</span> Grouped binomial regression</a></li>
+<li><a href="12.html#section12-5" id="toc-section12-5"><span class="toc-section-number">12.5</span> Poisson and Poisson rate regression</a></li>
+<li><a href="12.html#section12-6" id="toc-section12-6"><span class="toc-section-number">12.6</span> Overdispersion and separation in count models</a></li>
+<li><a href="12.html#section12-7" id="toc-section12-7"><span class="toc-section-number">12.7</span> Zero-truncated/zero-inflated models</a></li>
+<li><a href="12.html#section12-8" id="toc-section12-8"><span class="toc-section-number">12.8</span> Multiple (pair-wise) comparisons using Tukey’s HSD and the compact letter display</a></li>
+</ul></li>
+<li class="has-sub"><a href="13-chapter13.html#chapter13" id="toc-chapter13"><span class="toc-section-number">13</span> More than two category responses</a>
+<ul>
+<li><a href="13.html#section13-1" id="toc-section13-1"><span class="toc-section-number">13.1</span> Situation</a></li>
+<li><a href="13.html#section13-2" id="toc-section13-2"><span class="toc-section-number">13.2</span> Multiple (pair-wise) comparisons using Tukey’s HSD and the compact letter display</a></li>
+</ul></li>
+<li class="has-sub"><a href="14-chapter14.html#chapter14" id="toc-chapter14"><span class="toc-section-number">14</span> Generalized linear mixed models</a>
+<ul>
+<li><a href="14.html#section14-1" id="toc-section14-1"><span class="toc-section-number">14.1</span> Situation</a></li>
+<li><a href="14.html#section14-2" id="toc-section14-2"><span class="toc-section-number">14.2</span> Multiple (pair-wise) comparisons using Tukey’s HSD and the compact letter display</a></li>
+</ul></li>
+<li class="has-sub"><a href="15-chapter15.html#chapter15" id="toc-chapter15"><span class="toc-section-number">15</span> Reporting recommendations</a>
+<ul>
+<li><a href="15.html#section15-1" id="toc-section15-1"><span class="toc-section-number">15.1</span> Situation</a></li>
+<li><a href="15.html#section15-2" id="toc-section15-2"><span class="toc-section-number">15.2</span> Inclusion diagrams</a></li>
+<li><a href="15.html#section15-3" id="toc-section15-3"><span class="toc-section-number">15.3</span> “Table 1”</a></li>
+<li><a href="15.html#section15-4" id="toc-section15-4"><span class="toc-section-number">15.4</span> Model summaries, scaling predictors, effects plots</a></li>
+<li><a href="15.html#section15-5" id="toc-section15-5"><span class="toc-section-number">15.5</span> Multiple (pair-wise) comparisons using Tukey’s HSD and the compact letter display</a></li>
+</ul></li>
+<li><a href="references.html#references" id="toc-references">References</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="section8-4" class="section level2" number="8.4">
+<h2><span class="header-section-number">8.4</span> Multiple (pair-wise) comparisons using Tukey’s HSD and the compact letter display</h2>
+<!-- \sectionmark{Multiple (pair-wise) comparisons using Tukey's HSD and CLD} -->
+<p>There is a method that many researchers use to more efficiently generate and
+report these sorts of results that is called a <strong><em>compact letter display</em></strong>
+(CLD, <span class="citation">Piepho (<a href="#ref-Piepho2004" role="doc-biblioref">2004</a>)</span>)<a href="#fn78" class="footnote-ref" id="fnref78"><sup>78</sup></a>. The <code>cld</code> function can be applied to the results from</p>
+<!-- \newpage -->
+
+</div>
+<!-- </div> -->
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Piepho2004" class="csl-entry">
+Piepho, Hans-Peter. 2004. <span>“An Algorithm for a Letter-Based Representation of All-Pairwise Comparisons.”</span> <em>Journal of Computational and Graphical Statistics</em> 13 (2): 456–66.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="78">
+<li id="fn78"><p>Note that this method is implemented slightly differently than explained here in some software packages so if you see this in a journal article, read the discussion carefully.<a href="8.html#fnref78" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+<p style="text-align: center;">
+<a href="8.html"><button class="btn btn-default">Previous</button></a>
+<a href="9-chapter9.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+</body>
+</html>

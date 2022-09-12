@@ -1,0 +1,36 @@
+book_filename: "LMMAER"
+language:
+  ui:
+    chapter_name: "Chapter "
+rmd_files: ["index.Rmd",
+            "01-preface.rmd",
+            "02-linearmodelsreview.rmd",
+            "03-identifyingthemodeldesign.rmd",
+            "04-identifyingthemodelresponse.Rmd",
+            "05-datavisualization.Rmd",
+            "06-nonconstantvariance.Rmd",
+            "07-linearmixedtwolevels.Rmd",
+            "08-linearmixedmorethantwolevels.Rmd",
+            "09-generalizedadditivemodels.Rmd",
+            "10-temporalautocorrelation.Rmd",
+			"11-spatialautocorrelation.Rmd",
+			"12-glm.Rmd",
+			"13-morethantwocategoryresponses.Rmd",
+			"14-glmm.Rmd",
+			"15-reportingrecommendations.Rmd",
+			"16-references.rmd"]
+output:
+  bookdown::pdf_book:
+    includes:
+      in_header: preamble.tex
+    papersize: letter
+    colorlinks: true
+    fig_width: 5
+    fig_height: 3.5
+    
+  bookdown::gitbook:
+    css: [style.css, toc.css, font-awesome.min.css]
+    split_by: section+number
+site: bookdown::bookdown_site
+tables: true
+new_session: true

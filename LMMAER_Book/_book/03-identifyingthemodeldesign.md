@@ -1,0 +1,90 @@
+---
+output:
+  html_document: default
+  pdf_document:
+    keep_tex: yes
+---
+
+# Identifying the Model: Study designs/sampling methods {#chapter3}
+
+
+
+
+
+
+
+While the technical details of estimating and doing inference are like a ball of yarn to a kitten and can usefully distract you for years of exploring this material, this chapter discusses how data are generated and provides tools for thinking designing your own studies. I more often work with data from studies that have either been designed and the data were already collected (prior to consultation with a statistician) or in observational studies, where "design" is not chosen by the researchers but by the process (although the choice to collect and analyze it in any particular form is, in some sense, a "design"). There are many resources that can help to implement complex randomization schemes and take you through designing your own experiments - that is not my goal here. We will focus on asking hard questions of the study and data collection process to elicit the correct model structure. While doing this, you might actually learn some principles of designing experiments, but the goal here is more on finding the right model, given a design, rather than on designing the best experiment in a given situation.
+
+
+As part of this chapter, I will also introduce a number of different data sets we will revisit later in the semester and some diagramming tools that will be a prominent component of our modeling process as well as the model summarizations.
+
+## "Measurement" structure {#section3-1}
+
+
+\indent The simplest data set to analyze is a **cross-sectional** data set with no inherent groups. This is the scenario that leads to assuming that all observations are independent of one another. This study design fits clearly with using `lm` to analyze data with models such as One-Way ANOVA, Two-Way ANOVA, simple and multiple linear regression, and such simple procedures at the two-independent sample t-test (which is just a two-group Two-Way ANOVA, if no one told you that yet). Independence of observations is also an inherent assumption in basic nonparametric and simple randomization procedures. While this design and these analyses cover the majority of statistical methods used in practice, when you actually dig into many study designs there are additional complexities lurking and often unaccounted for.
+
+\indent You can think of violations of the independence assumption as any source of systematically similar or dissimilar groups of rows of observations in the data set. The most clear of the violations is taking repeated measures on the same subject but other related examples would be taking measurements of a group of students in the same classroom or from patients that are getting treatment in different hospitals or plants that are grouped together in plots within a field. In all of these cases, we might think that "neighbors" (multiple observations on the same subject or from the same class or in the same plot) might be more similar on some response we measure within a group and less similar to those outside the group. These are all examples of **two-level** situations where our main task initially is to account for subject-to-subject, class-to-class, or hospital-to-hospital variability. In Chapter 7 (link), we will explore the **random intercept** models as a starting point for doing this. There are always extensions, but for two-level situations, the focus is on accounting for systematic differences at the higher level which allows for random variability that is independent across observations at the **observation" level (conditional on the random subject or group variability, the remaining errors are independent).
+
+Two-level situations go by a variety of different "names", some hinting at how the data are collected. For example, repeated measures (usually over time) on the same subjects are called (not surprisingly) repeated measures data or are called longitudinal data or ?... When there are experimental units that are physically split apart to create experimental units, such as when fields are split into rows and one observation is made per row, this is called a **split-plot** design. [Other name from education?] In all of these designs, we can start with the same random-intercept model. So to me, the "name" of the design is less important than what the level of grouping is called and what I need to do to account for it in a model.
+
+
+\indent And it is possible for these similar/dissimilar measurements to come in layers or a hierarchy, where there are groups of "neighbors" within larger groups of "neighbors. Extending each of the previous examples, the repeated measures on the same subject could come from groups of students in the same classes or patients in the same hospitals or plants in the same fields. Theses create multi-level (here meaning more than two levels) hierarchies that we need to account. These come with specific names of designs partially discussed below, but I generally try to think about the hierarchies and how to account for them, rather than the specific name of the design that lead to the data that were collected. I find this more general approach to help me to handle additional complexities that do not fit into a "named" design and to test my ideas of what the actual design might be. In these cases (Chapter 8 (link)), we start with random intercepts for each level of the hierarchy (except for the observation level) in order to account for systematic variability at each level. The top^[More on numbering levels in a bit, as that has two ways to do it] level is accounted for in a way that is similar to the two-level model with a random intercept. For the grouping within the top level groups, .... nesting... so **nested** random intercepts are incorporated. Just as in the two-level model, there is an assumption of random variation that is independent at the observation level once we account for the systematic variation at higher levels of the model. 
+
+Like for two-level models, the same multi-level model can account for data collection schemes that go by different names (or are often un-named). Specifically, a **split-split plot** desing is a three-level design where there observational units that are split up physically in a hierarchical way twice (say fields that are split into rows of the field and then the rows are split to get multiple observations within a row). But a "split-plot" design where repeated measures are taken on each row in the field would also result in a three-level situation (fields, rows in fields, and observations on the rows in the fields over time). I would not call the second situation a "split-split plot" but the model for it and the one with rows sub-divided would be analyzed with essentially the same statistical model to handle the hierarchies. 
+
+Three-level models seem complex, but for reasons I sometimes struggle to understand, researchers often endeavor to work with more complex situations^[Or graduate students are "encouraged" by their advisors to do this, which seems more common for the source of this.]. Sometimes this is because of the way measurements must be taken and sometimes it is just an overcomplication. You can read a great and very humble discussion of this in [], where [] discusses a project he did. He .... and found that the results would be very similar if he had just averaged to the pond level instead of trying to analyze the results at the [] level. That said, there are some reasons to avoid aggregation. My most common are (1) differing sample size or variance at the lowest level of the hierarchy, (2) explanatory variables that vary at the lowest level of the hierarachy and (in their measured form) can explain variation at the level of observations, and/or (3) there are potentially problematic (think outlier or contaminated measurements) at the observation level and aggregating would remove the chance to identify and investigate those unusual points before combining them with others. 
+
+
+Sample size
+
+Random assigned, level of variation of fixed effects
+
+
+Diagrams
+
+\indent In the following, I am drawing on twenty years of experience and a good number of mistakes and "wandering" in trying to arrive at the correct model for a given data set. This is one of the most complex aspects of doing mixed models as there are often multiple options for how to think about the "groups" and this leads to multiple models that could be fit and often quite different results from the models. 
+
+
+[move] All of these methods have extensions to non-independent data and I will spend the rest of this book going through how we can use mixed models to account for various violations of the independence of observations assumptions.
+
+
+* General questions to ask to determine the study design
+    
+    
+## "Measurement" diagrams {#section3-2}
+    
+This     
+    
+## Effective sample size and degrees of freedom {#section3-3}
+
+
+This
+
+
+## Visualizing observed predictors {#section3-4}
+    
+alluvial
+
+tableplot
+
+ggpairs
+
+heatmap of predictors/ sorting predictor variables
+    
+  corrplot.mg
+
+
+
+<!-- \sectionmark{Multiple (pair-wise) comparisons using Tukey's HSD and CLD} -->
+
+## Multiple (pair-wise) comparisons using Tukey's HSD and the compact letter display {#section3-5}
+
+<!-- \sectionmark{Multiple (pair-wise) comparisons using Tukey's HSD and CLD} -->
+
+
+\indent There is a method that many researchers use to more efficiently generate and 
+report these sorts of results that is called a ***compact letter display*** \index{compact letter display}
+(CLD, @Piepho2004)^[Note that this method is implemented slightly differently than explained here in some software packages so if you see this in a journal article, read the discussion carefully.]. The ``cld`` function can be applied to the results from 
+
+<!-- \newpage -->
+

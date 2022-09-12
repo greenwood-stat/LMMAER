@@ -1,0 +1,23 @@
+h1:chapter1 Preface
+h2:section1-1 Overview of methods
+fig:Figure1-1 (ref:fig1-1)
+h2:section1-2 Getting started in R
+fig:Figure1-2 (ref:fig1-2)
+fig:Figure1-3 (ref:fig1-3)
+fig:Figure1-4 (ref:fig1-4)
+h2:section1-3 Basic summary statistics, histograms, and boxplots using R
+fig:Figure1-5 (ref:fig1-5)
+fig:Figure1-6 (ref:fig1-6)
+fig:Figure1-7 (ref:fig1-7)
+fig:Figure1-8 (ref:fig1-8)
+fig:Figure1-9 (ref:fig1-9)
+h2:section1-4 R Markdown
+h2:section1-5 Grammar of Graphics
+fig:Figure1-10 (ref:fig1-10)
+fig:Figure1-11 (ref:fig1-11)
+fig:Figure1-12 (ref:fig1-12)
+h2:section1-6 Exiting RStudio
+h2:section1-7 Chapter summary
+h2:section1-8 Summary of important R code
+h2:section1-9 Practice problems
+

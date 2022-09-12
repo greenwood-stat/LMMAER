@@ -1,0 +1,73 @@
+---
+output:
+  html_document: default
+  pdf_document:
+    keep_tex: yes
+---
+
+# Reporting recommendations {#chapter15}
+
+```{r echo=F,warning=F,message=F}
+set.seed(3234)
+library(pander)
+library(mosaic)
+library(knitr)
+library(gridExtra)
+knitr::opts_chunk$set(cache = F,fig.width = 10,  fig.height = 6,
+                      out.width="75%",fig.retina = 2, fig.align = 'center',
+                      fig.pos='ht!',
+                      message=F,warning=F)
+options(show.signif.stars = FALSE)
+```
+
+
+```{r echo=F}
+#Color Format
+colFmt = function(x, color){
+  outputFormat = opts_knit$get("rmarkdown.pandoc.to")
+  if(outputFormat == 'latex')
+    paste("\\textcolor{",color,"}{",x,"}",sep="")
+  else if(outputFormat == 'html')
+    paste("<font color='",color,"'>",x,"</font>",sep="")
+  else
+    x
+}
+colFmtBold = function(x, color){
+  outputFormat = opts_knit$get("rmarkdown.pandoc.to")
+  if(outputFormat == 'latex')
+    paste("\\textcolor{",color,"}{\\textbf{",x,"}}",sep="")
+  else if(outputFormat == 'html')
+    paste("<b><font color='",color,"'>",x,"</font></b>",sep="")
+  else
+    x
+}
+```
+
+## Situation {#section15-1}
+
+While each chapter has hopefully provided some ideas of ways to communicate statistical results, this chapter takes on summarizing guidance on how to go from models to communicating the results from the modeling process.
+
+
+
+## Inclusion diagrams {#section15-2}
+
+
+## "Table 1" {#section15-3}
+
+
+## Model summaries, scaling predictors, effects plots {#section15-4}
+
+
+<!-- \sectionmark{Multiple (pair-wise) comparisons using Tukey's HSD and CLD} -->
+
+## Multiple (pair-wise) comparisons using Tukey's HSD and the compact letter display {#section15-5}
+
+<!-- \sectionmark{Multiple (pair-wise) comparisons using Tukey's HSD and CLD} -->
+
+
+\indent There is a method that many researchers use to more efficiently generate and 
+report these sorts of results that is called a ***compact letter display*** \index{compact letter display}
+(CLD, @Piepho2004)^[Note that this method is implemented slightly differently than explained here in some software packages so if you see this in a journal article, read the discussion carefully.]. The ``cld`` function can be applied to the results from 
+
+<!-- \newpage -->
+

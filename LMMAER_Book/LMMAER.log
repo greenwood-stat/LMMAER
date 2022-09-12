@@ -1,0 +1,1844 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.4.5)  12 SEP 2022 10:11
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./LMMAER.tex
+(LMMAER.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-02-24> (C:\Users\w76c139\AppData\Local\Programs\MiKT
+eX\tex/latex/base\book.cls
+Document Class: book 2021/10/04 v1.4n Standard LaTeX document class
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/base\bk10.clo
+File: bk10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count185
+\c@chapter=\count186
+\c@section=\count187
+\c@subsection=\count188
+\c@subsubsection=\count189
+\c@paragraph=\count190
+\c@subparagraph=\count191
+\c@figure=\count192
+\c@table=\count193
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+) (C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2021/10/15 v2.17l AMS math features
+\@mathmargin=\skip49
+For additional information on amsmath, use the `?' option.
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks16
+\ex@=\dimen139
+)) (C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen140
+) (C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2021/08/26 v2.02 operator names
+)
+\inf@bad=\count194
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count195
+\leftroot@=\count196
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count197
+\DOTSCASE@=\count198
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box50
+\strutbox@=\box51
+\big@size=\dimen141
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count199
+\c@MaxMatrixCols=\count266
+\dotsspace@=\muskip16
+\c@parentequation=\count267
+\dspbrk@lvl=\count268
+\tag@help=\toks17
+\row@=\count269
+\column@=\count270
+\maxfields@=\count271
+\andhelp@=\toks18
+\eqnshift@=\dimen142
+\alignsep@=\dimen143
+\tagshift@=\dimen144
+\tagwidth@=\dimen145
+\totwidth@=\dimen146
+\lineht@=\dimen147
+\@envbody=\toks19
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2938.
+LaTeX Info: Redefining \] on input line 2939.
+) (C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.st
+y
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/lm\lmodern.sty
+Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+) (C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+) (C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 11
+2.
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
+File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)) (C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks21
+\inpenc@posthook=\toks22
+) (C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+) (C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/upquote\upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+)
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype.s
+ty
+Package: microtype 2022/03/14 v3.0d Micro-typographical refinements (RS)
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks23
+)
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count272
+)
+\MT@toks=\toks24
+\MT@tempbox=\box52
+\MT@count=\count273
+LaTeX Info: Redefining \noprotrusionifhmode on input line 1027.
+LaTeX Info: Redefining \leftprotrusion on input line 1028.
+LaTeX Info: Redefining \rightprotrusion on input line 1036.
+LaTeX Info: Redefining \textls on input line 1195.
+\MT@outer@kern=\dimen148
+LaTeX Info: Redefining \textmicrotypecontext on input line 1781.
+\MT@listname@count=\count274
+
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype-p
+dftex.def
+File: microtype-pdftex.def 2022/03/14 v3.0d Definitions specific to pdftex (RS)
+
+LaTeX Info: Redefining \lsstyle on input line 900.
+LaTeX Info: Redefining \lslig on input line 900.
+\MT@outer@space=\skip52
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype.c
+fg
+File: microtype.cfg 2022/03/14 v3.0d microtype main configuration file (RS)
+)) (C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/parskip\parskip.st
+y
+Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
+
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.s
+ty
+Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
+
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+)
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/generic/kvsetkeys\kvsetkeys
+.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+))) (C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
+
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cf
+g
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.d
+ef
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1356.
+Package xcolor Info: Model `RGB' extended on input line 1368.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1370.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
+)
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/fancyvrb\fancyvrb.sty
+Package: fancyvrb 2022/04/12 4.2 verbatim text (tvz,hv)
+\FV@CodeLineNo=\count275
+\FV@InFile=\read2
+\FV@TabBox=\box53
+\c@FancyVerbLine=\count276
+\FV@StepNumber=\count277
+\FV@OutFile=\write3
+) (C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/framed\framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip53
+\fb@frw=\dimen149
+\fb@frh=\dimen150
+\FrameRule=\dimen151
+\FrameSep=\dimen152
+) (C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/tools\longtable.sty
+Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
+\LTleft=\skip54
+\LTright=\skip55
+\LTpre=\skip56
+\LTpost=\skip57
+\LTchunksize=\count278
+\LTcapwidth=\dimen153
+\LT@head=\box54
+\LT@firsthead=\box55
+\LT@foot=\box56
+\LT@lastfoot=\box57
+\LT@gbox=\box58
+\LT@cols=\count279
+\LT@rows=\count280
+\c@LT@tables=\count281
+\c@LT@chunks=\count282
+\LT@p@ftn=\toks25
+)
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen154
+\lightrulewidth=\dimen155
+\cmidrulewidth=\dimen156
+\belowrulesep=\dimen157
+\belowbottomsep=\dimen158
+\aboverulesep=\dimen159
+\abovetopsep=\dimen160
+\cmidrulesep=\dimen161
+\cmidrulekern=\dimen162
+\defaultaddspace=\dimen163
+\@cmidla=\count283
+\@cmidlb=\count284
+\@aboverulesep=\dimen164
+\@belowrulesep=\dimen165
+\@thisruleclass=\count285
+\@lastruleclass=\count286
+\@thisrulewidth=\dimen166
+) (C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
+\col@sep=\dimen167
+\ar@mcellbox=\box59
+\extrarowheight=\dimen168
+\NC@list=\toks26
+\extratabsurround=\skip58
+\backup@length=\skip59
+\ar@cellbox=\box60
+) (C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count287
+\calc@Bcount=\count288
+\calc@Adimen=\dimen169
+\calc@Bdimen=\dimen170
+\calc@Askip=\skip60
+\calc@Bskip=\skip61
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count289
+\calc@Cskip=\skip62
+)
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/footnotehyper\footnot
+ehyper.sty
+Package: footnotehyper 2021/08/13 v1.1e hyperref aware footnote.sty (JFB)
+\FNH@notes=\box61
+\FNH@width=\dimen171
+\FNH@toks=\toks27
+)
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics
+.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+)
+\Gin@req@height=\dimen172
+\Gin@req@width=\dimen173
+)
+\cslhangindent=\skip63
+\csllabelwidth=\skip64
+\cslentryspacingunit=\skip65
+
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bookmark.sty
+Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
+
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2022-02-21 v7.00n Hypertext links for LaTeX
+
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcm
+ds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr
+.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefi
+nekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape
+.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+) (C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/letltxmacro\letltxmac
+ro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+) (C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+\@linkdim=\dimen174
+\Hy@linkcounter=\count290
+\Hy@pagecounter=\count291
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2022-02-21 v7.00n Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.s
+ty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count292
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
+File: puenc.def 2022-02-21 v7.00n Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Option `unicode' set `true' on input line 4018.
+Package hyperref Info: Hyper figures OFF on input line 4137.
+Package hyperref Info: Link nesting OFF on input line 4142.
+Package hyperref Info: Hyper index ON on input line 4145.
+Package hyperref Info: Plain pages OFF on input line 4152.
+Package hyperref Info: Backreferencing OFF on input line 4157.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4390.
+\c@Hy@tempcnt=\count293
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4749.
+\XeTeXLinkMargin=\dimen175
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintca
+lc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count294
+\Field@Width=\dimen176
+\Fld@charsize=\dimen177
+Package hyperref Info: Hyper figures OFF on input line 6027.
+Package hyperref Info: Link nesting OFF on input line 6032.
+Package hyperref Info: Hyper index ON on input line 6035.
+Package hyperref Info: backreferencing OFF on input line 6042.
+Package hyperref Info: Link coloring OFF on input line 6047.
+Package hyperref Info: Link coloring with OCG OFF on input line 6052.
+Package hyperref Info: PDF/A mode OFF on input line 6057.
+LaTeX Info: Redefining \ref on input line 6097.
+LaTeX Info: Redefining \pageref on input line 6101.
+
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count295
+\c@Item=\count296
+\c@Hfootnote=\count297
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+File: hpdftex.def 2022-02-21 v7.00n Hyperref driver for pdfTeX
+
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.st
+y
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
+with kernel methods
+)
+\Fld@listcount=\count298
+\c@bookmark@seq@number=\count299
+
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunf
+ilecheck.sty
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniqu
+ecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+86.
+)
+\Hy@SectionHShift=\skip66
+)
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bkm-pdftex.d
+ef
+File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
+\BKM@id=\count300
+)) (C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/xurl\xurl.sty
+Package: xurl 2022/01/09 v 0.10 modify URL breaks
+)
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-p
+dftex.def
+File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count301
+\l__pdf_internal_box=\box62
+) (LMMAER.aux)
+\openout1 = `LMMAER.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 151.
+LaTeX Font Info:    ... okay on input line 151.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 151.
+LaTeX Font Info:    ... okay on input line 151.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 151.
+LaTeX Font Info:    ... okay on input line 151.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 151.
+LaTeX Font Info:    ... okay on input line 151.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 151.
+LaTeX Font Info:    ... okay on input line 151.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 151.
+LaTeX Font Info:    ... okay on input line 151.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 151.
+LaTeX Font Info:    ... okay on input line 151.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 151.
+LaTeX Font Info:    ... okay on input line 151.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 151.
+LaTeX Font Info:    ... okay on input line 151.
+LaTeX Info: Redefining \microtypecontext on input line 151.
+Package microtype Info: Applying patch `item' on input line 151.
+Package microtype Info: Applying patch `toc' on input line 151.
+Package microtype Info: Applying patch `eqnum' on input line 151.
+Package microtype Info: Applying patch `footnote' on input line 151.
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using protrusion set `basicmath'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `alltext-nott'.
+LaTeX Info: Redefining \showhyphens on input line 151.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-cmr.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
+(RS)
+)
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.
+mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count302
+\scratchdimen=\dimen178
+\scratchbox=\box63
+\nofMPsegments=\count303
+\nofMParguments=\count304
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count305
+\MPscratchDim=\dimen179
+\MPnumerator=\count306
+\makeMPintoPDFobject=\count307
+\everyMPtoPDFconversion=\toks29
+)
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf
+-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys
+.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+Package hyperref Info: Link coloring OFF on input line 151.
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
+
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gett
+itlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count308
+)
+LaTeX Info: Redefining \ref on input line 151.
+LaTeX Info: Redefining \pageref on input line 151.
+LaTeX Info: Redefining \nameref on input line 151.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
+53.
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
+53.
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+153.
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+153.
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 153.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 153.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 153.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 153
+.
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+) (C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cf
+g
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 153
+.
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cf
+g
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+) [1
+
+
+{C:/Users/w76c139/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2
+
+] (LMMAER.toc
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 3.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 3.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 3.
+[3] [4])
+\tf@toc=\write4
+\openout4 = `LMMAER.toc'.
+
+[5] [6
+
+]
+<frontMatter/creative_commons_license.png, id=241, 88.33pt x 31.11626pt>
+File: frontMatter/creative_commons_license.png Graphic file (type png)
+<use frontMatter/creative_commons_license.png>
+Package pdftex.def Info: frontMatter/creative_commons_license.png  used on inpu
+t line 172.
+(pdftex.def)             Requested size: 88.17073pt x 31.06013pt.
+
+Underfull \vbox (badness 2698) has occurred while \output is active []
+
+[7] [8 <./frontMatter/creative_commons_license.png>]
+Chapter 1.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.214 
+       [1
+
+
+]
+<chapter1_files/decisiontree.pdf, id=263, 963.6pt x 542.025pt>
+File: chapter1_files/decisiontree.pdf Graphic file (type pdf)
+<use chapter1_files/decisiontree.pdf>
+Package pdftex.def Info: chapter1_files/decisiontree.pdf  used on input line 23
+8.
+(pdftex.def)             Requested size: 258.74925pt x 145.54645pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.282 
+       [2 <./chapter1_files/decisiontree.pdf>]
+pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.313 
+       [3]
+pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.376 
+       [4]
+pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.410 
+       [5]
+<chapter1_files/fig1-2.png, id=333, 1798.209pt x 1198.368pt>
+File: chapter1_files/fig1-2.png Graphic file (type png)
+<use chapter1_files/fig1-2.png>
+Package pdftex.def Info: chapter1_files/fig1-2.png  used on input line 438.
+(pdftex.def)             Requested size: 344.9833pt x 229.90483pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.445 \newpage
+               [6]
+pdfTeX warning (ext4): destination with the same identifier (name{page.7}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.473 \indent
+              As a first interaction with R we can use it as a calculator. T...
+[7 <./chapter1_files/fig1-2.png>]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 4
+74.
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+pdfTeX warning (ext4): destination with the same identifier (name{page.8}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.556 
+       [8] [9]
+Overfull \hbox (8.82774pt too wide) in paragraph at lines 652--653
+[]\T1/lmr/m/n/10 (-20) RunTime  
+ []
+
+
+Overfull \hbox (6.09044pt too wide) in paragraph at lines 654--655
+[]\T1/lmr/m/n/10 (-20) RunPulse  
+ []
+
+
+Overfull \hbox (7.43088pt too wide) in paragraph at lines 659--660
+[]\T1/lmr/m/n/10 (-20) BodyWeight  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 684--684
+[][][]\T1/lmr/m/n/8 (+20) If you are hav-ing trou-ble get-ting the file con-ver
+ted and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 684--684
+\T1/lmr/m/n/8 (+20) read into R, copy and run the fol-low-ing code: \T1/lmtt/m/
+n/8 treadmill <-
+ []
+
+[10]
+<chapter1_files/fig1-3.png, id=374, 1798.209pt x 1198.368pt>
+File: chapter1_files/fig1-3.png Graphic file (type png)
+<use chapter1_files/fig1-3.png>
+Package pdftex.def Info: chapter1_files/fig1-3.png  used on input line 711.
+(pdftex.def)             Requested size: 344.9833pt x 229.90483pt.
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <9> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 747.
+
+Overfull \vbox (0.51375pt too high) detected at line 766
+ []
+
+[11 <./chapter1_files/fig1-3.png>] [12]
+<chapter1_files/fig1-4.png, id=389, 1798.209pt x 1198.368pt>
+File: chapter1_files/fig1-4.png Graphic file (type png)
+<use chapter1_files/fig1-4.png>
+Package pdftex.def Info: chapter1_files/fig1-4.png  used on input line 806.
+(pdftex.def)             Requested size: 344.9833pt x 229.90483pt.
+
+Overfull \hbox (37.26033pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 1.3.  BASIC SUMMARY STATISTICS, HISTOGRAMS, AND BOXPLOTS USING 
+R \T1/lmr/m/n/10 13
+ []
+
+[13] [14 <./chapter1_files/fig1-4.png>]
+<01-preface_files/figure-latex/Figure1-5-1.pdf, id=409, 722.7pt x 433.62pt>
+File: 01-preface_files/figure-latex/Figure1-5-1.pdf Graphic file (type pdf)
+<use 01-preface_files/figure-latex/Figure1-5-1.pdf>
+Package pdftex.def Info: 01-preface_files/figure-latex/Figure1-5-1.pdf  used on
+ input line 912.
+(pdftex.def)             Requested size: 258.74925pt x 155.24954pt.
+<chapter1_files/Fig1-6.png, id=410, 1798.209pt x 1198.368pt>
+File: chapter1_files/Fig1-6.png Graphic file (type png)
+<use chapter1_files/Fig1-6.png>
+Package pdftex.def Info: chapter1_files/Fig1-6.png  used on input line 923.
+(pdftex.def)             Requested size: 344.9833pt x 229.90483pt.
+
+Overfull \hbox (37.26033pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 1.3.  BASIC SUMMARY STATISTICS, HISTOGRAMS, AND BOXPLOTS USING 
+R \T1/lmr/m/n/10 15
+ []
+
+[15]
+Underfull \vbox (badness 1057) has occurred while \output is active []
+
+[16 <./01-preface_files/figure-latex/Figure1-5-1.pdf> <./chapter1_files/Fig1-6.
+png>]
+<01-preface_files/figure-latex/Figure1-7-1.pdf, id=429, 722.7pt x 433.62pt>
+File: 01-preface_files/figure-latex/Figure1-7-1.pdf Graphic file (type pdf)
+<use 01-preface_files/figure-latex/Figure1-7-1.pdf>
+Package pdftex.def Info: 01-preface_files/figure-latex/Figure1-7-1.pdf  used on
+ input line 956.
+(pdftex.def)             Requested size: 258.74925pt x 155.24954pt.
+
+Overfull \hbox (37.26033pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 1.3.  BASIC SUMMARY STATISTICS, HISTOGRAMS, AND BOXPLOTS USING 
+R \T1/lmr/m/n/10 17
+ []
+
+[17 <./01-preface_files/figure-latex/Figure1-7-1.pdf>]
+<01-preface_files/figure-latex/Figure1-8-1.pdf, id=449, 722.7pt x 433.62pt>
+File: 01-preface_files/figure-latex/Figure1-8-1.pdf Graphic file (type pdf)
+<use 01-preface_files/figure-latex/Figure1-8-1.pdf>
+Package pdftex.def Info: 01-preface_files/figure-latex/Figure1-8-1.pdf  used on
+ input line 1017.
+(pdftex.def)             Requested size: 258.74925pt x 155.24954pt.
+<01-preface_files/figure-latex/Figure1-9-1.pdf, id=451, 722.7pt x 433.62pt>
+File: 01-preface_files/figure-latex/Figure1-9-1.pdf Graphic file (type pdf)
+<use 01-preface_files/figure-latex/Figure1-9-1.pdf>
+Package pdftex.def Info: 01-preface_files/figure-latex/Figure1-9-1.pdf  used on
+ input line 1042.
+(pdftex.def)             Requested size: 258.74925pt x 155.24954pt.
+[18 <./01-preface_files/figure-latex/Figure1-8-1.pdf>] [19 <./01-preface_files/
+figure-latex/Figure1-9-1.pdf>]
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
+1121.
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmtt.fd
+File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Underfull \hbox (badness 10000) in paragraph at lines 1155--1170
+\T1/lmtt/m/n/10 = <DATA>, mapping = aes(<VARIABLE MAPPINGS>)) + <GEOM_FUNCTION>
+()\T1/lmr/m/n/10 (+20) .
+ []
+
+[20]
+Overfull \hbox (1.499pt too wide) in paragraph at lines 1182--1182
+[]\TS1/lmtt/m/n/10 `\T1/lmtt/m/n/10 stat_bin()\TS1/lmtt/m/n/10 ` \T1/lmtt/m/n/1
+0 using \TS1/lmtt/m/n/10 `\T1/lmtt/m/n/10 bins = 30\TS1/lmtt/m/n/10 `\T1/lmtt/m
+/n/10 . Pick better value with \TS1/lmtt/m/n/10 `\T1/lmtt/m/n/10 binwidth\TS1/l
+mtt/m/n/10 `\T1/lmtt/m/n/10 .[] 
+ []
+
+<01-preface_files/figure-latex/Figure1-10-1.pdf, id=492, 722.7pt x 433.62pt>
+File: 01-preface_files/figure-latex/Figure1-10-1.pdf Graphic file (type pdf)
+<use 01-preface_files/figure-latex/Figure1-10-1.pdf>
+Package pdftex.def Info: 01-preface_files/figure-latex/Figure1-10-1.pdf  used o
+n input line 1186.
+(pdftex.def)             Requested size: 258.74925pt x 155.24954pt.
+[21 <./01-preface_files/figure-latex/Figure1-10-1.pdf>]
+<01-preface_files/figure-latex/Figure1-11-1.pdf, id=504, 722.7pt x 433.62pt>
+File: 01-preface_files/figure-latex/Figure1-11-1.pdf Graphic file (type pdf)
+<use 01-preface_files/figure-latex/Figure1-11-1.pdf>
+Package pdftex.def Info: 01-preface_files/figure-latex/Figure1-11-1.pdf  used o
+n input line 1208.
+(pdftex.def)             Requested size: 258.74925pt x 155.24954pt.
+[22 <./01-preface_files/figure-latex/Figure1-11-1.pdf>]
+<01-preface_files/figure-latex/Figure1-12-1.pdf, id=520, 722.7pt x 433.62pt>
+File: 01-preface_files/figure-latex/Figure1-12-1.pdf Graphic file (type pdf)
+<use 01-preface_files/figure-latex/Figure1-12-1.pdf>
+Package pdftex.def Info: 01-preface_files/figure-latex/Figure1-12-1.pdf  used o
+n input line 1256.
+(pdftex.def)             Requested size: 258.74925pt x 155.24954pt.
+
+Underfull \vbox (badness 1755) has occurred while \output is active []
+
+[23 <./01-preface_files/figure-latex/Figure1-12-1.pdf>] [24] [25]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
+329.
+(C:\Users\w76c139\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [26] [27] [28]
+Chapter 2.
+[29
+
+] [30] [31] [32] [33]
+Overfull \hbox (27.74892pt too wide) in paragraph at lines 1637--1637
+[]\T1/lmtt/m/n/10 ##   Condition Distance Shirt Helmet Pants Gloves ReflectClip
+s Backpack[] 
+ []
+
+
+Overfull \hbox (11.99896pt too wide) in paragraph at lines 1637--1637
+[]\T1/lmtt/m/n/10 ##   <chr>        <dbl> <chr> <chr>  <chr> <chr>  <chr>      
+  <chr>[] 
+ []
+
+
+Overfull \hbox (1.499pt too wide) in paragraph at lines 1637--1637
+[]\T1/lmtt/m/n/10 ## 1 casual         132 Rugby hat    plain plain  no         
+  yes[] 
+ []
+
+
+Overfull \hbox (1.499pt too wide) in paragraph at lines 1637--1637
+[]\T1/lmtt/m/n/10 ## 2 casual         137 Rugby hat    plain plain  no         
+  yes[] 
+ []
+
+
+Overfull \hbox (1.499pt too wide) in paragraph at lines 1637--1637
+[]\T1/lmtt/m/n/10 ## 3 casual         174 Rugby hat    plain plain  no         
+  yes[] 
+ []
+
+
+Overfull \hbox (1.499pt too wide) in paragraph at lines 1637--1637
+[]\T1/lmtt/m/n/10 ## 4 casual          82 Rugby hat    plain plain  no         
+  yes[] 
+ []
+
+
+Overfull \hbox (1.499pt too wide) in paragraph at lines 1637--1637
+[]\T1/lmtt/m/n/10 ## 5 casual         106 Rugby hat    plain plain  no         
+  yes[] 
+ []
+
+
+Overfull \hbox (1.499pt too wide) in paragraph at lines 1637--1637
+[]\T1/lmtt/m/n/10 ## 6 casual          48 Rugby hat    plain plain  no         
+  yes[] 
+ []
+
+
+Overfull \hbox (53.99884pt too wide) in paragraph at lines 1655--1655
+[]\T1/lmtt/m/n/10 ##   Condition Distance Shirt      Helmet Pants Gloves Reflec
+tClips Backpack[] 
+ []
+
+
+Overfull \hbox (38.24889pt too wide) in paragraph at lines 1655--1655
+[]\T1/lmtt/m/n/10 ##   <chr>        <dbl> <chr>      <chr>  <chr> <chr>  <chr> 
+       <chr>[] 
+ []
+
+
+Overfull \hbox (22.49893pt too wide) in paragraph at lines 1655--1655
+[]\T1/lmtt/m/n/10 ## 1 racer          122 TourJersey race   lycra bike   yes   
+       no[] 
+ []
+
+
+Overfull \hbox (22.49893pt too wide) in paragraph at lines 1655--1655
+[]\T1/lmtt/m/n/10 ## 2 racer          204 TourJersey race   lycra bike   yes   
+       no[] 
+ []
+
+
+Overfull \hbox (22.49893pt too wide) in paragraph at lines 1655--1655
+[]\T1/lmtt/m/n/10 ## 3 racer          116 TourJersey race   lycra bike   yes   
+       no[] 
+ []
+
+
+Overfull \hbox (22.49893pt too wide) in paragraph at lines 1655--1655
+[]\T1/lmtt/m/n/10 ## 4 racer          132 TourJersey race   lycra bike   yes   
+       no[] 
+ []
+
+
+Overfull \hbox (22.49893pt too wide) in paragraph at lines 1655--1655
+[]\T1/lmtt/m/n/10 ## 5 racer          224 TourJersey race   lycra bike   yes   
+       no[] 
+ []
+
+
+Overfull \hbox (22.49893pt too wide) in paragraph at lines 1655--1655
+[]\T1/lmtt/m/n/10 ## 6 racer           72 TourJersey race   lycra bike   yes   
+       no[] 
+ []
+
+
+Overfull \hbox (27.74892pt too wide) in paragraph at lines 1685--1685
+[]\T1/lmtt/m/n/10 ##   Condition Distance Shirt Helmet Pants Gloves ReflectClip
+s Backpack[] 
+ []
+
+
+Overfull \hbox (11.99896pt too wide) in paragraph at lines 1685--1685
+[]\T1/lmtt/m/n/10 ##   <chr>        <dbl> <chr> <chr>  <chr> <chr>  <chr>      
+  <chr>[] 
+ []
+
+
+Overfull \hbox (1.499pt too wide) in paragraph at lines 1685--1685
+[]\T1/lmtt/m/n/10 ## 1 casual          82 Rugby hat    plain plain  no         
+  yes[] 
+ []
+
+[34]
+Overfull \hbox (74.99878pt too wide) in paragraph at lines 1713--1713
+[]\T1/lmtt/m/n/10 ##    Condition Distance Shirt       Helmet   Pants Gloves Re
+flectClips Backpack[] 
+ []
+
+
+Overfull \hbox (59.24883pt too wide) in paragraph at lines 1713--1713
+[]\T1/lmtt/m/n/10 ##    <chr>        <dbl> <chr>       <chr>    <chr> <chr>  <c
+hr>        <chr>[] 
+ []
+
+
+Overfull \hbox (48.74886pt too wide) in paragraph at lines 1713--1713
+[]\T1/lmtt/m/n/10 ##  1 casual         132 Rugby       hat      plain plain  no
+           yes[] 
+ []
+
+
+Overfull \hbox (48.74886pt too wide) in paragraph at lines 1713--1713
+[]\T1/lmtt/m/n/10 ##  2 casual         137 Rugby       hat      plain plain  no
+           yes[] 
+ []
+
+
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 1713--1713
+[]\T1/lmtt/m/n/10 ##  3 commute         70 PlainJersey commuter plain bike   ye
+s          no[] 
+ []
+
+
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 1713--1713
+[]\T1/lmtt/m/n/10 ##  4 commute        151 PlainJersey commuter plain bike   ye
+s          no[] 
+ []
+
+
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 1713--1713
+[]\T1/lmtt/m/n/10 ##  5 hiviz           94 Jacket      commuter plain bike   ye
+s          no[] 
+ []
+
+
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 1713--1713
+[]\T1/lmtt/m/n/10 ##  6 hiviz          145 Jacket      commuter plain bike   ye
+s          no[] 
+ []
+
+
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 1713--1713
+[]\T1/lmtt/m/n/10 ##  7 novice          12 Vest_Novice commuter plain bike   ye
+s          no[] 
+ []
+
+
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 1713--1713
+[]\T1/lmtt/m/n/10 ##  8 novice         122 Vest_Novice commuter plain bike   ye
+s          no[] 
+ []
+
+
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 1713--1713
+[]\T1/lmtt/m/n/10 ##  9 police         113 Vest_Police commuter plain bike   ye
+s          no[] 
+ []
+
+
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 1713--1713
+[]\T1/lmtt/m/n/10 ## 10 police         174 Vest_Police commuter plain bike   ye
+s          no[] 
+ []
+
+
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 1713--1713
+[]\T1/lmtt/m/n/10 ## 11 polite         156 Vest_Polite commuter plain bike   ye
+s          no[] 
+ []
+
+
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 1713--1713
+[]\T1/lmtt/m/n/10 ## 12 polite          14 Vest_Polite commuter plain bike   ye
+s          no[] 
+ []
+
+
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 1713--1713
+[]\T1/lmtt/m/n/10 ## 13 racer          104 TourJersey  race     lycra bike   ye
+s          no[] 
+ []
+
+
+Overfull \hbox (43.49887pt too wide) in paragraph at lines 1713--1713
+[]\T1/lmtt/m/n/10 ## 14 racer          141 TourJersey  race     lycra bike   ye
+s          no[] 
+ []
+
+[35] [36] [37] [38]
+Overfull \hbox (143.75pt too wide) in paragraph at lines 1821--1821
+[]\T1/lmtt/m/n/8 ##    Condition      Distance             Shirt          Helme
+t       Pants        Gloves     ReflectClips Backpack[] 
+ []
+
+
+Overfull \hbox (143.74pt too wide) in paragraph at lines 1821--1821
+[]\T1/lmtt/m/n/8 ##  casual :779   Min.   :  2.0   Jacket     :737   commuter:4
+059   lycra: 852   bike :4911   no : 779     no :4911[] 
+ []
+
+
+Overfull \hbox (143.738pt too wide) in paragraph at lines 1821--1821
+[]\T1/lmtt/m/n/8 ##  commute:857   1st Qu.: 99.0   PlainJersey:857   hat     : 
+779   plain:4838   plain: 779   yes:4911     yes: 779[] 
+ []
+
+<02-linearmodelsreview_files/figure-latex/Figure2-1-1.pdf, id=639, 722.7pt x 43
+3.62pt>
+File: 02-linearmodelsreview_files/figure-latex/Figure2-1-1.pdf Graphic file (ty
+pe pdf)
+<use 02-linearmodelsreview_files/figure-latex/Figure2-1-1.pdf>
+Package pdftex.def Info: 02-linearmodelsreview_files/figure-latex/Figure2-1-1.p
+df  used on input line 1843.
+(pdftex.def)             Requested size: 258.74925pt x 155.24954pt.
+[39] [40 <./02-linearmodelsreview_files/figure-latex/Figure2-1-1.pdf>]
+<02-linearmodelsreview_files/figure-latex/Figure2-2-1.pdf, id=661, 722.7pt x 43
+3.62pt>
+File: 02-linearmodelsreview_files/figure-latex/Figure2-2-1.pdf Graphic file (ty
+pe pdf)
+<use 02-linearmodelsreview_files/figure-latex/Figure2-2-1.pdf>
+Package pdftex.def Info: 02-linearmodelsreview_files/figure-latex/Figure2-2-1.p
+df  used on input line 1907.
+(pdftex.def)             Requested size: 258.74925pt x 155.24954pt.
+
+Underfull \vbox (badness 2134) has occurred while \output is active []
+
+[41 <./02-linearmodelsreview_files/figure-latex/Figure2-2-1.pdf>]
+<02-linearmodelsreview_files/figure-latex/Figure2-3-1.pdf, id=681, 722.7pt x 43
+3.62pt>
+File: 02-linearmodelsreview_files/figure-latex/Figure2-3-1.pdf Graphic file (ty
+pe pdf)
+<use 02-linearmodelsreview_files/figure-latex/Figure2-3-1.pdf>
+Package pdftex.def Info: 02-linearmodelsreview_files/figure-latex/Figure2-3-1.p
+df  used on input line 1954.
+(pdftex.def)             Requested size: 258.74925pt x 155.24954pt.
+[42] [43 <./02-linearmodelsreview_files/figure-latex/Figure2-3-1.pdf>]
+<02-linearmodelsreview_files/figure-latex/Figure2-4-1.pdf, id=711, 722.7pt x 43
+3.62pt>
+File: 02-linearmodelsreview_files/figure-latex/Figure2-4-1.pdf Graphic file (ty
+pe pdf)
+<use 02-linearmodelsreview_files/figure-latex/Figure2-4-1.pdf>
+Package pdftex.def Info: 02-linearmodelsreview_files/figure-latex/Figure2-4-1.p
+df  used on input line 2012.
+(pdftex.def)             Requested size: 258.74925pt x 155.24954pt.
+[44 <./02-linearmodelsreview_files/figure-latex/Figure2-4-1.pdf>] [45]
+Overfull \hbox (17.24895pt too wide) in paragraph at lines 2080--2080
+[]\T1/lmtt/m/n/10 ##   Condition min    Q1 median  Q3 max     mean       sd   n
+ missing[] 
+ []
+
+
+Overfull \hbox (17.24895pt too wide) in paragraph at lines 2080--2080
+[]\T1/lmtt/m/n/10 ## 1    casual  17 100.0    117 134 245 117.6110 29.86954 779
+       0[] 
+ []
+
+
+Overfull \hbox (17.24895pt too wide) in paragraph at lines 2080--2080
+[]\T1/lmtt/m/n/10 ## 2   commute   8  98.0    116 132 222 114.6079 29.63166 857
+       0[] 
+ []
+
+
+Overfull \hbox (17.24895pt too wide) in paragraph at lines 2080--2080
+[]\T1/lmtt/m/n/10 ## 3     hiviz  12 101.0    117 134 237 118.4383 29.03384 737
+       0[] 
+ []
+
+
+Overfull \hbox (17.24895pt too wide) in paragraph at lines 2080--2080
+[]\T1/lmtt/m/n/10 ## 4    novice   2 100.5    118 133 274 116.9405 29.03812 807
+       0[] 
+ []
+
+
+Overfull \hbox (17.24895pt too wide) in paragraph at lines 2080--2080
+[]\T1/lmtt/m/n/10 ## 5    police  34 104.0    119 138 253 122.1215 29.73662 790
+       0[] 
+ []
+
+
+Overfull \hbox (17.24895pt too wide) in paragraph at lines 2080--2080
+[]\T1/lmtt/m/n/10 ## 6    polite   2  95.0    114 133 225 114.0518 31.23684 868
+       0[] 
+ []
+
+
+Overfull \hbox (17.24895pt too wide) in paragraph at lines 2080--2080
+[]\T1/lmtt/m/n/10 ## 7     racer  28  98.0    117 135 231 116.7559 30.60059 852
+       0[] 
+ []
+
+[46] [47]
+<02-linearmodelsreview_files/figure-latex/Figure2-5-1.pdf, id=742, 722.7pt x 43
+3.62pt>
+File: 02-linearmodelsreview_files/figure-latex/Figure2-5-1.pdf Graphic file (ty
+pe pdf)
+<use 02-linearmodelsreview_files/figure-latex/Figure2-5-1.pdf>
+Package pdftex.def Info: 02-linearmodelsreview_files/figure-latex/Figure2-5-1.p
+df  used on input line 2191.
+(pdftex.def)             Requested size: 258.74925pt x 155.24954pt.
+[48]
+Overfull \hbox (127.26071pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 2.3.  MODELS, HYPOTHESES, AND PERMUTATIONS FOR THE TWO SAMPLE M
+EAN SITUATION \T1/lmr/m/n/10 49
+ []
+
+[49 <./02-linearmodelsreview_files/figure-latex/Figure2-5-1.pdf>]
+<chapter2_files/image015.png, id=769, 722.7pt x 360.59718pt>
+File: chapter2_files/image015.png Graphic file (type png)
+<use chapter2_files/image015.png>
+Package pdftex.def Info: chapter2_files/image015.png  used on input line 2326.
+(pdftex.def)             Requested size: 344.99533pt x 172.13829pt.
+[50]
+Overfull \hbox (127.26071pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 2.3.  MODELS, HYPOTHESES, AND PERMUTATIONS FOR THE TWO SAMPLE M
+EAN SITUATION \T1/lmr/m/n/10 51
+ []
+
+[51 <./chapter2_files/image015.png>] [52]
+Underfull \vbox (badness 2698) has occurred while \output is active []
+
+
+Overfull \hbox (127.26071pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 2.3.  MODELS, HYPOTHESES, AND PERMUTATIONS FOR THE TWO SAMPLE M
+EAN SITUATION \T1/lmr/m/n/10 53
+ []
+
+[53]
+<02-linearmodelsreview_files/figure-latex/Figure2-7-1.pdf, id=798, 722.7pt x 43
+3.62pt>
+File: 02-linearmodelsreview_files/figure-latex/Figure2-7-1.pdf Graphic file (ty
+pe pdf)
+<use 02-linearmodelsreview_files/figure-latex/Figure2-7-1.pdf>
+Package pdftex.def Info: 02-linearmodelsreview_files/figure-latex/Figure2-7-1.p
+df  used on input line 2487.
+(pdftex.def)             Requested size: 258.74925pt x 155.24954pt.
+[54 <./02-linearmodelsreview_files/figure-latex/Figure2-7-1.pdf>]
+Overfull \hbox (127.26071pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 2.3.  MODELS, HYPOTHESES, AND PERMUTATIONS FOR THE TWO SAMPLE M
+EAN SITUATION \T1/lmr/m/n/10 55
+ []
+
+[55] [56]
+Overfull \hbox (22.60681pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 2.4.  PERMUTATION TESTING FOR THE TWO SAMPLE MEAN SITUATION \T1
+/lmr/m/n/10 57
+ []
+
+[57]
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 2632.
+[58]
+Overfull \hbox (22.60681pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 2.4.  PERMUTATION TESTING FOR THE TWO SAMPLE MEAN SITUATION \T1
+/lmr/m/n/10 59
+ []
+
+[59] [60]
+<02-linearmodelsreview_files/figure-latex/Figure2-8-1.pdf, id=855, 722.7pt x 43
+3.62pt>
+File: 02-linearmodelsreview_files/figure-latex/Figure2-8-1.pdf Graphic file (ty
+pe pdf)
+<use 02-linearmodelsreview_files/figure-latex/Figure2-8-1.pdf>
+Package pdftex.def Info: 02-linearmodelsreview_files/figure-latex/Figure2-8-1.p
+df  used on input line 2772.
+(pdftex.def)             Requested size: 258.74925pt x 155.24954pt.
+
+Overfull \hbox (22.60681pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 2.4.  PERMUTATION TESTING FOR THE TWO SAMPLE MEAN SITUATION \T1
+/lmr/m/n/10 61
+ []
+
+[61 <./02-linearmodelsreview_files/figure-latex/Figure2-8-1.pdf>] [62]
+Overfull \hbox (32.99927pt too wide) in paragraph at lines 2810--2810
+[]\T1/lmtt/m/n/9 ##        min        Q1     median  Q3      max       mean    
+   sd    n missing[] 
+ []
+
+
+Overfull \hbox (32.99927pt too wide) in paragraph at lines 2810--2810
+[]\T1/lmtt/m/n/9 ##  -41.26667 -10.06667 -0.3333333 8.6 37.26667 -0.5054667 13.
+17156 1000       0[] 
+ []
+
+<02-linearmodelsreview_files/figure-latex/Figure2-9-1.pdf, id=874, 722.7pt x 43
+3.62pt>
+File: 02-linearmodelsreview_files/figure-latex/Figure2-9-1.pdf Graphic file (ty
+pe pdf)
+<use 02-linearmodelsreview_files/figure-latex/Figure2-9-1.pdf>
+Package pdftex.def Info: 02-linearmodelsreview_files/figure-latex/Figure2-9-1.p
+df  used on input line 2834.
+(pdftex.def)             Requested size: 258.74925pt x 155.24954pt.
+
+Overfull \hbox (22.60681pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 2.4.  PERMUTATION TESTING FOR THE TWO SAMPLE MEAN SITUATION \T1
+/lmr/m/n/10 63
+ []
+
+[63 <./02-linearmodelsreview_files/figure-latex/Figure2-9-1.pdf>] [64]
+Underfull \vbox (badness 2126) has occurred while \output is active []
+
+
+Overfull \hbox (22.60681pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 2.4.  PERMUTATION TESTING FOR THE TWO SAMPLE MEAN SITUATION \T1
+/lmr/m/n/10 65
+ []
+
+[65]
+<02-linearmodelsreview_files/figure-latex/Figure2-10-1.pdf, id=903, 722.7pt x 4
+33.62pt>
+File: 02-linearmodelsreview_files/figure-latex/Figure2-10-1.pdf Graphic file (t
+ype pdf)
+<use 02-linearmodelsreview_files/figure-latex/Figure2-10-1.pdf>
+Package pdftex.def Info: 02-linearmodelsreview_files/figure-latex/Figure2-10-1.
+pdf  used on input line 2941.
+(pdftex.def)             Requested size: 258.74925pt x 155.24954pt.
+[66 <./02-linearmodelsreview_files/figure-latex/Figure2-10-1.pdf>]
+Overfull \hbox (22.60681pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 2.4.  PERMUTATION TESTING FOR THE TWO SAMPLE MEAN SITUATION \T1
+/lmr/m/n/10 67
+ []
+
+[67]
+<chapter2_files/pvalueStrengths.png, id=927, 722.7pt x 289.08pt>
+File: chapter2_files/pvalueStrengths.png Graphic file (type png)
+<use chapter2_files/pvalueStrengths.png>
+Package pdftex.def Info: chapter2_files/pvalueStrengths.png  used on input line
+ 3077.
+(pdftex.def)             Requested size: 344.99533pt x 137.99812pt.
+[68] [69 <./chapter2_files/pvalueStrengths.png>] [70] [71] [72] [73] [74]
+Overfull \hbox (82.60818pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 2.6.  CONNECTING RANDOMIZATION (NONPARAMETRIC) AND PARAMETRIC T
+ESTS \T1/lmr/m/n/10 75
+ []
+
+[75] [76]
+<02-linearmodelsreview_files/figure-latex/Figure2-12-1.pdf, id=983, 722.7pt x 4
+33.62pt>
+File: 02-linearmodelsreview_files/figure-latex/Figure2-12-1.pdf Graphic file (t
+ype pdf)
+<use 02-linearmodelsreview_files/figure-latex/Figure2-12-1.pdf>
+Package pdftex.def Info: 02-linearmodelsreview_files/figure-latex/Figure2-12-1.
+pdf  used on input line 3582.
+(pdftex.def)             Requested size: 258.74925pt x 155.24954pt.
+
+Overfull \hbox (82.60818pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 2.6.  CONNECTING RANDOMIZATION (NONPARAMETRIC) AND PARAMETRIC T
+ESTS \T1/lmr/m/n/10 77
+ []
+
+[77 <./02-linearmodelsreview_files/figure-latex/Figure2-12-1.pdf>]
+<02-linearmodelsreview_files/figure-latex/Figure2-13-1.pdf, id=997, 722.7pt x 4
+33.62pt>
+File: 02-linearmodelsreview_files/figure-latex/Figure2-13-1.pdf Graphic file (t
+ype pdf)
+<use 02-linearmodelsreview_files/figure-latex/Figure2-13-1.pdf>
+Package pdftex.def Info: 02-linearmodelsreview_files/figure-latex/Figure2-13-1.
+pdf  used on input line 3631.
+(pdftex.def)             Requested size: 258.74925pt x 155.24954pt.
+[78]
+<02-linearmodelsreview_files/figure-latex/Figure2-14-1.pdf, id=1005, 722.7pt x 
+433.62pt>
+File: 02-linearmodelsreview_files/figure-latex/Figure2-14-1.pdf Graphic file (t
+ype pdf)
+<use 02-linearmodelsreview_files/figure-latex/Figure2-14-1.pdf>
+Package pdftex.def Info: 02-linearmodelsreview_files/figure-latex/Figure2-14-1.
+pdf  used on input line 3693.
+(pdftex.def)             Requested size: 258.74925pt x 155.24954pt.
+
+Overfull \hbox (82.60818pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 2.6.  CONNECTING RANDOMIZATION (NONPARAMETRIC) AND PARAMETRIC T
+ESTS \T1/lmr/m/n/10 79
+ []
+
+[79 <./02-linearmodelsreview_files/figure-latex/Figure2-13-1.pdf>] [80 <./02-li
+nearmodelsreview_files/figure-latex/Figure2-14-1.pdf>]
+Overfull \hbox (82.60818pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 2.6.  CONNECTING RANDOMIZATION (NONPARAMETRIC) AND PARAMETRIC T
+ESTS \T1/lmr/m/n/10 81
+ []
+
+[81] [82]
+<02-linearmodelsreview_files/figure-latex/Figure2-15-1.pdf, id=1047, 722.7pt x 
+433.62pt>
+File: 02-linearmodelsreview_files/figure-latex/Figure2-15-1.pdf Graphic file (t
+ype pdf)
+<use 02-linearmodelsreview_files/figure-latex/Figure2-15-1.pdf>
+Package pdftex.def Info: 02-linearmodelsreview_files/figure-latex/Figure2-15-1.
+pdf  used on input line 3887.
+(pdftex.def)             Requested size: 258.74925pt x 155.24954pt.
+
+Overfull \hbox (82.60818pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 2.6.  CONNECTING RANDOMIZATION (NONPARAMETRIC) AND PARAMETRIC T
+ESTS \T1/lmr/m/n/10 83
+ []
+
+[83]
+<02-linearmodelsreview_files/figure-latex/Figure2-16-1.pdf, id=1055, 722.7pt x 
+433.62pt>
+File: 02-linearmodelsreview_files/figure-latex/Figure2-16-1.pdf Graphic file (t
+ype pdf)
+<use 02-linearmodelsreview_files/figure-latex/Figure2-16-1.pdf>
+Package pdftex.def Info: 02-linearmodelsreview_files/figure-latex/Figure2-16-1.
+pdf  used on input line 3943.
+(pdftex.def)             Requested size: 258.74925pt x 155.24954pt.
+[84 <./02-linearmodelsreview_files/figure-latex/Figure2-15-1.pdf>] [85 <./02-li
+nearmodelsreview_files/figure-latex/Figure2-16-1.pdf>]
+<02-linearmodelsreview_files/figure-latex/Figure2-17-1.pdf, id=1083, 722.7pt x 
+433.62pt>
+File: 02-linearmodelsreview_files/figure-latex/Figure2-17-1.pdf Graphic file (t
+ype pdf)
+<use 02-linearmodelsreview_files/figure-latex/Figure2-17-1.pdf>
+Package pdftex.def Info: 02-linearmodelsreview_files/figure-latex/Figure2-17-1.
+pdf  used on input line 4021.
+(pdftex.def)             Requested size: 258.74925pt x 155.24954pt.
+[86 <./02-linearmodelsreview_files/figure-latex/Figure2-17-1.pdf>] [87] [88]
+Overfull \hbox (222.6163pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 2.8.  REPRODUCIBILITY CRISIS: MOVING BEYOND P < 0.05, PUBLICATI
+ON BIAS, AND MULTIPLE TESTING ISSUES \T1/lmr/m/n/10 89
+ []
+
+[89] [90]
+Overfull \hbox (222.6163pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 2.8.  REPRODUCIBILITY CRISIS: MOVING BEYOND P < 0.05, PUBLICATI
+ON BIAS, AND MULTIPLE TESTING ISSUES \T1/lmr/m/n/10 91
+ []
+
+[91]
+<02-linearmodelsreview_files/figure-latex/Figure2-18-1.pdf, id=1136, 722.7pt x 
+433.62pt>
+File: 02-linearmodelsreview_files/figure-latex/Figure2-18-1.pdf Graphic file (t
+ype pdf)
+<use 02-linearmodelsreview_files/figure-latex/Figure2-18-1.pdf>
+Package pdftex.def Info: 02-linearmodelsreview_files/figure-latex/Figure2-18-1.
+pdf  used on input line 4211.
+(pdftex.def)             Requested size: 258.74925pt x 155.24954pt.
+[92]
+Overfull \hbox (222.6163pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 2.8.  REPRODUCIBILITY CRISIS: MOVING BEYOND P < 0.05, PUBLICATI
+ON BIAS, AND MULTIPLE TESTING ISSUES \T1/lmr/m/n/10 93
+ []
+
+[93 <./02-linearmodelsreview_files/figure-latex/Figure2-18-1.pdf>] [94]
+<02-linearmodelsreview_files/figure-latex/Figure2-19-1.pdf, id=1167, 722.7pt x 
+433.62pt>
+File: 02-linearmodelsreview_files/figure-latex/Figure2-19-1.pdf Graphic file (t
+ype pdf)
+<use 02-linearmodelsreview_files/figure-latex/Figure2-19-1.pdf>
+Package pdftex.def Info: 02-linearmodelsreview_files/figure-latex/Figure2-19-1.
+pdf  used on input line 4291.
+(pdftex.def)             Requested size: 258.74925pt x 155.24954pt.
+
+Overfull \hbox (222.6163pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 2.8.  REPRODUCIBILITY CRISIS: MOVING BEYOND P < 0.05, PUBLICATI
+ON BIAS, AND MULTIPLE TESTING ISSUES \T1/lmr/m/n/10 95
+ []
+
+[95 <./02-linearmodelsreview_files/figure-latex/Figure2-19-1.pdf>]
+Overfull \hbox (136.94907pt too wide) in paragraph at lines 4355--4355
+[]\T1/lmtt/m/n/9 ##   Scenario          min         Q1    median        Q3     
+  max       mean         sd    n missing[] 
+ []
+
+
+Overfull \hbox (136.94907pt too wide) in paragraph at lines 4355--4355
+[]\T1/lmtt/m/n/9 ## 1    First 0.0017051496 0.27075755 0.5234412 0.7784957 0.99
+95293 0.51899179 0.28823469 1000       0[] 
+ []
+
+
+Overfull \hbox (136.94907pt too wide) in paragraph at lines 4355--4355
+[]\T1/lmtt/m/n/9 ## 2      Min 0.0005727895 0.02718018 0.0646370 0.1273880 0.58
+30232 0.09156364 0.08611836 1000       0[] 
+ []
+
+
+Overfull \hbox (108.59912pt too wide) in paragraph at lines 4367--4367
+[]\T1/lmtt/m/n/9 ##   Scenario       min         Q1     median       Q3      ma
+x       mean       sd    n missing[] 
+ []
+
+
+Underfull \vbox (badness 4403) has occurred while \output is active []
+
+[96]
+Overfull \hbox (108.59912pt too wide) in paragraph at lines 4367--4367
+[]\T1/lmtt/m/n/9 ## 1    First -4.531864 -0.8424604 0.07360378 1.002228 4.45895
+1 0.05411473 1.392940 1000       0[] 
+ []
+
+
+Overfull \hbox (108.59912pt too wide) in paragraph at lines 4367--4367
+[]\T1/lmtt/m/n/9 ## 2      Min -5.136510 -2.6857436 1.24042295 2.736930 5.01119
+0 0.03539750 2.874454 1000       0[] 
+ []
+
+
+Overfull \hbox (222.6163pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 2.8.  REPRODUCIBILITY CRISIS: MOVING BEYOND P < 0.05, PUBLICATI
+ON BIAS, AND MULTIPLE TESTING ISSUES \T1/lmr/m/n/10 97
+ []
+
+[97]
+<02-linearmodelsreview_files/figure-latex/Figure2-20-1.pdf, id=1193, 722.7pt x 
+433.62pt>
+File: 02-linearmodelsreview_files/figure-latex/Figure2-20-1.pdf Graphic file (t
+ype pdf)
+<use 02-linearmodelsreview_files/figure-latex/Figure2-20-1.pdf>
+Package pdftex.def Info: 02-linearmodelsreview_files/figure-latex/Figure2-20-1.
+pdf  used on input line 4410.
+(pdftex.def)             Requested size: 258.74925pt x 155.24954pt.
+[98]
+Underfull \vbox (badness 1394) detected at line 4456
+ []
+
+
+Overfull \hbox (222.6163pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 2.8.  REPRODUCIBILITY CRISIS: MOVING BEYOND P < 0.05, PUBLICATI
+ON BIAS, AND MULTIPLE TESTING ISSUES \T1/lmr/m/n/10 99
+ []
+
+[99 <./02-linearmodelsreview_files/figure-latex/Figure2-20-1.pdf>]
+<02-linearmodelsreview_files/figure-latex/Figure2-21-1.pdf, id=1213, 722.7pt x 
+433.62pt>
+File: 02-linearmodelsreview_files/figure-latex/Figure2-21-1.pdf Graphic file (t
+ype pdf)
+<use 02-linearmodelsreview_files/figure-latex/Figure2-21-1.pdf>
+Package pdftex.def Info: 02-linearmodelsreview_files/figure-latex/Figure2-21-1.
+pdf  used on input line 4460.
+(pdftex.def)             Requested size: 258.74925pt x 155.24954pt.
+[100 <./02-linearmodelsreview_files/figure-latex/Figure2-21-1.pdf>]
+Overfull \hbox (90.74873pt too wide) in paragraph at lines 4482--4482
+[]\T1/lmtt/m/n/10 ##   Scenario         min        Q1  median Q3 max      mean 
+       sd    n missing[] 
+ []
+
+
+Overfull \hbox (90.74873pt too wide) in paragraph at lines 4482--4482
+[]\T1/lmtt/m/n/10 ## 1    First 0.017051496 1.0000000 1.00000  1   1 0.9628911 
+0.1502805 1000       0[] 
+ []
+
+
+Overfull \hbox (90.74873pt too wide) in paragraph at lines 4482--4482
+[]\T1/lmtt/m/n/10 ## 2      Min 0.005727895 0.2718018 0.64637  1   1 0.6212932 
+0.3597701 1000       0[] 
+ []
+
+
+Overfull \hbox (227.6163pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 2.8.  REPRODUCIBILITY CRISIS: MOVING BEYOND P < 0.05, PUBLICATI
+ON BIAS, AND MULTIPLE TESTING ISSUES \T1/lmr/m/n/10 101
+ []
+
+[101] [102] [103]
+<02-linearmodelsreview_files/figure-latex/Figure2-22-1.pdf, id=1250, 722.7pt x 
+433.62pt>
+File: 02-linearmodelsreview_files/figure-latex/Figure2-22-1.pdf Graphic file (t
+ype pdf)
+<use 02-linearmodelsreview_files/figure-latex/Figure2-22-1.pdf>
+Package pdftex.def Info: 02-linearmodelsreview_files/figure-latex/Figure2-22-1.
+pdf  used on input line 4610.
+(pdftex.def)             Requested size: 258.74925pt x 155.24954pt.
+[104]
+Overfull \hbox (95.99872pt too wide) in paragraph at lines 4670--4670
+[]\T1/lmtt/m/n/10 ##        min        Q1    median        Q3      max      mea
+n       sd    n missing[] 
+ []
+
+
+Overfull \hbox (95.99872pt too wide) in paragraph at lines 4670--4670
+[]\T1/lmtt/m/n/10 ##  -66.96429 -34.57159 -25.65881 -17.12391 17.17857 -25.7364
+1 12.30987 1000       0[] 
+ []
+
+<02-linearmodelsreview_files/figure-latex/Figure2-23-1.pdf, id=1258, 722.7pt x 
+433.62pt>
+File: 02-linearmodelsreview_files/figure-latex/Figure2-23-1.pdf Graphic file (t
+ype pdf)
+<use 02-linearmodelsreview_files/figure-latex/Figure2-23-1.pdf>
+Package pdftex.def Info: 02-linearmodelsreview_files/figure-latex/Figure2-23-1.
+pdf  used on input line 4676.
+(pdftex.def)             Requested size: 258.74925pt x 155.24954pt.
+
+Underfull \vbox (badness 1735) detected at line 4694
+ []
+
+[105 <./02-linearmodelsreview_files/figure-latex/Figure2-22-1.pdf>] [106 <./02-
+linearmodelsreview_files/figure-latex/Figure2-23-1.pdf>]
+<02-linearmodelsreview_files/figure-latex/Figure2-24-1.pdf, id=1282, 722.7pt x 
+433.62pt>
+File: 02-linearmodelsreview_files/figure-latex/Figure2-24-1.pdf Graphic file (t
+ype pdf)
+<use 02-linearmodelsreview_files/figure-latex/Figure2-24-1.pdf>
+Package pdftex.def Info: 02-linearmodelsreview_files/figure-latex/Figure2-24-1.
+pdf  used on input line 4781.
+(pdftex.def)             Requested size: 258.74925pt x 155.24954pt.
+[107] [108 <./02-linearmodelsreview_files/figure-latex/Figure2-24-1.pdf>] [109]
+<02-linearmodelsreview_files/figure-latex/Figure2-25-1.pdf, id=1307, 722.7pt x 
+433.62pt>
+File: 02-linearmodelsreview_files/figure-latex/Figure2-25-1.pdf Graphic file (t
+ype pdf)
+<use 02-linearmodelsreview_files/figure-latex/Figure2-25-1.pdf>
+Package pdftex.def Info: 02-linearmodelsreview_files/figure-latex/Figure2-25-1.
+pdf  used on input line 4884.
+(pdftex.def)             Requested size: 258.74925pt x 155.24954pt.
+[110 <./02-linearmodelsreview_files/figure-latex/Figure2-25-1.pdf>]
+Overfull \hbox (22.49893pt too wide) in paragraph at lines 4962--4962
+[]\T1/lmtt/m/n/10 ##   Condition min    Q1 median    Q3 max     mean       sd  
+n missing[] 
+ []
+
+
+Overfull \hbox (22.49893pt too wide) in paragraph at lines 4962--4962
+[]\T1/lmtt/m/n/10 ## 1    casual  72 112.5    143 154.5 208 135.8000 39.36133 1
+5       0[] 
+ []
+
+
+Overfull \hbox (22.49893pt too wide) in paragraph at lines 4962--4962
+[]\T1/lmtt/m/n/10 ## 2   commute  60  88.5    113 123.0 168 109.8667 28.41244 1
+5       0[] 
+ []
+
+[111]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[112]
+Overfull \hbox (26.35739pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 2.10.  BOOTSTRAP CONFIDENCE INTERVALS FOR DIFFERENCE IN GPAS \T
+1/lmr/m/n/10 113
+ []
+
+[113] [114]
+<02-linearmodelsreview_files/figure-latex/Figure2-26-1.pdf, id=1340, 722.7pt x 
+433.62pt>
+File: 02-linearmodelsreview_files/figure-latex/Figure2-26-1.pdf Graphic file (t
+ype pdf)
+<use 02-linearmodelsreview_files/figure-latex/Figure2-26-1.pdf>
+Package pdftex.def Info: 02-linearmodelsreview_files/figure-latex/Figure2-26-1.
+pdf  used on input line 5284.
+(pdftex.def)             Requested size: 258.74925pt x 155.24954pt.
+
+Overfull \hbox (26.35739pt too wide) has occurred while \output is active
+\T1/lmr/m/sl/10 2.10.  BOOTSTRAP CONFIDENCE INTERVALS FOR DIFFERENCE IN GPAS \T
+1/lmr/m/n/10 115
+ []
+
+[115] [116 <./02-linearmodelsreview_files/figure-latex/Figure2-26-1.pdf>] [117]
+[118] [119] [120] [121] [122]
+Chapter 3.
+[123
+
+]
+Overfull \hbox (69.69328pt too wide) has occurred while \output is active
+\T1/lmr/m/n/10 124 \T1/lmr/m/sl/10 CHAPTER 3.  IDENTIFYING THE MODEL: STUDY DES
+IGNS/SAMPLING METHODS
+ []
+
+[124] [125]
+Underfull \hbox (badness 3492) in paragraph at lines 5666--5666
+[]\T1/lmr/bx/n/14.4 (+20) Multiple (pair-wise) com-par-isons us-ing
+ []
+
+
+Overfull \hbox (69.69328pt too wide) has occurred while \output is active
+\T1/lmr/m/n/10 126 \T1/lmr/m/sl/10 CHAPTER 3.  IDENTIFYING THE MODEL: STUDY DES
+IGNS/SAMPLING METHODS
+ []
+
+[126]
+Chapter 4.
+[127
+
+] [128] [129] [130]
+<responsediagram.png, id=1460, 733.99219pt x 341.77687pt>
+File: responsediagram.png Graphic file (type png)
+<use responsediagram.png>
+Package pdftex.def Info: responsediagram.png  used on input line 5702.
+(pdftex.def)             Requested size: 258.74907pt x 120.48418pt.
+
+Underfull \hbox (badness 3492) in paragraph at lines 5717--5717
+[]\T1/lmr/bx/n/14.4 (+20) Multiple (pair-wise) com-par-isons us-ing
+ []
+
+[131 <./responsediagram.png>] [132
+
+]
+Chapter 5.
+
+LaTeX Warning: Reference `Chapter1' on page 133 undefined on input line 5731.
+
+[133]
+Overfull \hbox (105.3136pt too wide) has occurred while \output is active
+\T1/lmr/m/n/10 134 \T1/lmr/m/sl/10 CHAPTER 5.  DATA VISUALIZATION AND DATA WRAN
+GLING FOR HIERARCHICAL DATA
+ []
+
+[134] [135]
+Underfull \hbox (badness 3492) in paragraph at lines 5781--5781
+[]\T1/lmr/bx/n/14.4 (+20) Multiple (pair-wise) com-par-isons us-ing
+ []
+
+
+Overfull \hbox (105.3136pt too wide) has occurred while \output is active
+\T1/lmr/m/n/10 136 \T1/lmr/m/sl/10 CHAPTER 5.  DATA VISUALIZATION AND DATA WRAN
+GLING FOR HIERARCHICAL DATA
+ []
+
+[136]
+Chapter 6.
+[137
+
+]
+Underfull \hbox (badness 3492) in paragraph at lines 5811--5811
+[]\T1/lmr/bx/n/14.4 (+20) Multiple (pair-wise) com-par-isons us-ing
+ []
+
+[138]
+Chapter 7.
+[139
+
+] [140]
+Underfull \hbox (badness 1168) in paragraph at lines 5897--5897
+[]\T1/lmr/bx/n/14.4 (+20) Multiple (pair-wise) com-par-isons us-ing
+ []
+
+
+Underfull \hbox (badness 1609) in paragraph at lines 5897--5897
+\T1/lmr/bx/n/14.4 (+20) Tukey's HSD and the com-pact let-ter
+ []
+
+[141] [142]
+Chapter 8.
+
+Underfull \hbox (badness 3492) in paragraph at lines 5930--5930
+[]\T1/lmr/bx/n/14.4 (+20) Multiple (pair-wise) com-par-isons us-ing
+ []
+
+[143
+
+] [144]
+Chapter 9.
+
+Underfull \hbox (badness 3492) in paragraph at lines 5947--5947
+[]\T1/lmr/bx/n/14.4 (+20) Multiple (pair-wise) com-par-isons us-ing
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[145
+
+] [146]
+Chapter 10.
+
+Underfull \hbox (badness 1168) in paragraph at lines 5968--5968
+[]\T1/lmr/bx/n/14.4 (+20) Multiple (pair-wise) com-par-isons us-ing
+ []
+
+
+Underfull \hbox (badness 1609) in paragraph at lines 5968--5968
+\T1/lmr/bx/n/14.4 (+20) Tukey's HSD and the com-pact let-ter
+ []
+
+[147
+
+] [148
+
+]
+Chapter 11.
+
+Underfull \hbox (badness 1168) in paragraph at lines 5983--5983
+[]\T1/lmr/bx/n/14.4 (+20) Multiple (pair-wise) com-par-isons us-ing
+ []
+
+
+Underfull \hbox (badness 1609) in paragraph at lines 5983--5983
+\T1/lmr/bx/n/14.4 (+20) Tukey's HSD and the com-pact let-ter
+ []
+
+[149] [150
+
+]
+Chapter 12.
+
+Underfull \hbox (badness 1168) in paragraph at lines 6016--6016
+[]\T1/lmr/bx/n/14.4 (+20) Multiple (pair-wise) com-par-isons us-ing
+ []
+
+
+Underfull \hbox (badness 1609) in paragraph at lines 6016--6016
+\T1/lmr/bx/n/14.4 (+20) Tukey's HSD and the com-pact let-ter
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[151] [152]
+Chapter 13.
+
+Underfull \hbox (badness 1168) in paragraph at lines 6031--6031
+[]\T1/lmr/bx/n/14.4 (+20) Multiple (pair-wise) com-par-isons us-ing
+ []
+
+
+Underfull \hbox (badness 1609) in paragraph at lines 6031--6031
+\T1/lmr/bx/n/14.4 (+20) Tukey's HSD and the com-pact let-ter
+ []
+
+[153
+
+] [154
+
+]
+Chapter 14.
+
+Underfull \hbox (badness 1168) in paragraph at lines 6046--6046
+[]\T1/lmr/bx/n/14.4 (+20) Multiple (pair-wise) com-par-isons us-ing
+ []
+
+
+Underfull \hbox (badness 1609) in paragraph at lines 6046--6046
+\T1/lmr/bx/n/14.4 (+20) Tukey's HSD and the com-pact let-ter
+ []
+
+[155] [156
+
+]
+Chapter 15.
+
+Underfull \hbox (badness 1168) in paragraph at lines 6070--6070
+[]\T1/lmr/bx/n/14.4 (+20) Multiple (pair-wise) com-par-isons us-ing
+ []
+
+
+Underfull \hbox (badness 1609) in paragraph at lines 6070--6070
+\T1/lmr/bx/n/14.4 (+20) Tukey's HSD and the com-pact let-ter
+ []
+
+[157] [158] (LMMAER.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 15366 strings out of 478582
+ 253439 string characters out of 2843401
+ 566071 words of memory out of 3000000
+ 32234 multiletter control sequences out of 15000+600000
+ 609377 words of font info for 347 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 74i,9n,77p,3278b,508s stack positions out of 10000i,1000n,20000p,200000b,80000s
+{C:/Users/w76c139/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}
+{C:/Users/w76c139/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.en
+c}{C:/Users/w76c139/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.
+enc}{C:/Users/w76c139/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathi
+t.enc}{C:/Users/w76c139/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1
+.enc}{C:/Users/w76c139/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.e
+nc}<C:/Users/w76c139/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10
+.pfb><C:/Users/w76c139/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx
+12.pfb><C:/Users/w76c139/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lm
+bx7.pfb><C:/Users/w76c139/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
+mbxi10.pfb><C:/Users/w76c139/AppData/Local/Programs/MiKTeX/fonts/type1/public/l
+m/lmex10.pfb><C:/Users/w76c139/AppData/Local/Programs/MiKTeX/fonts/type1/public
+/lm/lmmi10.pfb><C:/Users/w76c139/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/lm/lmmi7.pfb><C:/Users/w76c139/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/lm/lmmi8.pfb><C:/Users/w76c139/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/lm/lmmib10.pfb><C:/Users/w76c139/AppData/Local/Programs/MiKTeX/fonts/type1
+/public/lm/lmr10.pfb><C:/Users/w76c139/AppData/Local/Programs/MiKTeX/fonts/type
+1/public/lm/lmr12.pfb><C:/Users/w76c139/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/lm/lmr17.pfb><C:/Users/w76c139/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/lm/lmr5.pfb><C:/Users/w76c139/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/lm/lmr6.pfb><C:/Users/w76c139/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/lm/lmr7.pfb><C:/Users/w76c139/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/lm/lmr8.pfb><C:/Users/w76c139/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/lm/lmri10.pfb><C:/Users/w76c139/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/lm/lmri8.pfb><C:/Users/w76c139/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/lm/lmro10.pfb><C:/Users/w76c139/AppData/Local/Programs/MiKTeX/fon
+ts/type1/public/lm/lmsy10.pfb><C:/Users/w76c139/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/lm/lmsy5.pfb><C:/Users/w76c139/AppData/Local/Programs/MiKTeX/
+fonts/type1/public/lm/lmsy7.pfb><C:/Users/w76c139/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/lm/lmsy8.pfb><C:/Users/w76c139/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/lm/lmtk10.pfb><C:/Users/w76c139/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/w76c139/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/lm/lmtt8.pfb><C:/Users/w76c139/AppData/Local/Programs/
+MiKTeX/fonts/type1/public/lm/lmtt9.pfb><C:/Users/w76c139/AppData/Local/Programs
+/MiKTeX/fonts/type1/public/lm/lmtti10.pfb>
+Output written on LMMAER.pdf (166 pages, 4743163 bytes).
+PDF statistics:
+ 2250 PDF objects out of 2487 (max. 8388607)
+ 522 named destinations out of 1000 (max. 500000)
+ 70593 words of extra memory for PDF output out of 74296 (max. 10000000)
+

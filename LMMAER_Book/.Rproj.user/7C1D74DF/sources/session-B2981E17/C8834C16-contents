@@ -1,0 +1,353 @@
+---
+title: "Review of MLR with categorical variables (Welcome to STAT 412/512!)"
+output:
+  word_document:
+    fig_height: 4.5
+    fig_width: 8
+    reference_docx: mystyles_lecture.docx
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = FALSE,
+                      warning = FALSE
+                      )
+options(show.signif.stars = FALSE)
+```
+
+# R stuff:
+
+* Make sure you go through https://greenwood-stat.shinyapps.io/InstallDemo/ and make sure you have a local installation of R and RStudio and that they are up to date.
+
+    - You may have used the cloud version in the past, but it is no longer free to use for the volume of work you will need - it is still a backup if you are having issues getting the local install on your computer put together.
+
+* Do not `attach()` data sets. This is extremely dangerous when working with complicated data sets.
+
+* Fit models as `lm(y ~ x1 + x2 + ... ,data = ...)`
+    
+* Use `<-` instead of "=" to assign things in R ("=" is for options within functions)
+    
+* Generally, we will work to reinforce good R programming practices (with points attached as needed)
+
+* You will learn to use R-markdown where you will write code in specific areas (_chunks_) and run the chunk entirely and make sure nothing changes from your line-by-line explorations (we'll discuss this more in Lab 1 and HW 1)
+
+    - Note the header for this and other documents that turns of "significance stars" and sets warnings and messages to False (may not always use the warnings = F though)
+
+```r 
+knitr::opts_chunk$set(message = FALSE,
+                      warning = FALSE
+                      )
+options(show.signif.stars = FALSE)
+```
+
+* More information on R-markdown in this cheatsheet: https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf
+
+## Unifying different 4/511 experiences as _linear models_ (`lm`)
+
+* $Y_i \sim N(\mu,\sigma^2)$ using _linear models_
+
+* $\mu\{Y|X1,X2,...\}=\beta_0+\beta_1X_1+\beta_2x_2+...$ and
+
+* $Var\{Y|X1,X2,...\}=\sigma^2$
+
+* Or 
+
+\
+\
+\
+\
+\
+\
+
+
+* Assumptions: 
+
+* $Y_i,Y_{j}$ are independent for different $i,j$ (after controlling for X1, X2,...)
+
+\
+\
+\
+\
+
+
+## Indicator or dummy variables
+
+* We will use $I_{VarName=Cat}$ with $I_{VarName=Cat}$ equal to 1 when an observation is in "Cat" and 0 otherwise.
+
+    - **You must always define this** for the reader!!!!
+
+* Suppose we have a model for time spent on the course (hours) with a predictor of 412/512 that was coded as a numeric variable of 412 or 512:
+
+\
+\
+\
+\
+\
+\
+\
+\
+
+
+* Remember to simplify the models for specific groups when requested
+
+## Interactions
+
+* Two X's:
+
+\
+\
+\
+\
+\
+\
+\
+
+* Interpretation: Impact of X1 on response changes based on levels of X2
+
+* First (and sometimes only) test of interest is the one on the interaction part(s) of the model
+
+* Use _effects plots_ to help with interpretations of combined results of the two main effects and interaction coefficient(s) (more on effects plots in introductory lectures)
+
+## An example:
+
+* Niyazov et al. (2016) obtained data for the number of citations of articles (referenced in other articles/books) for all articles published and uploaded to academia.edu from 2009 to 2012 and a random sample of articles from crossref that were published in the same years but not posted on academia.edu.
+
+* I am going to analyze a random sample of n=2,000 papers from the data set that contained 31K papers 
+    
+* Research questions:
+
+    - Many listed, but most all focus on whether citations differ based on academia/not posting and whether the impacts of things like open access (available online/not) and impact factor on citations change based on being posted on academia/not, controlled for age of papers.
+  
+    - Note: Check author affiliations for more on "why" these were their research questions.
+
+Reference:
+
+* Niyazov, Y., Vogel, C., Price, R., Lund, B., Judd, B., Akil, A., Mortonson, M., Schwartzman, J., and Shron, M. (2016). Open Access Meets Discoverability: Citations to Articles Posted to Academia.edu. _PLoS ONE_ 11(2): e0148257. doi:10.1371/journal.pone.0148257 (available at https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0148257)
+
+Loading the data set (n=31,216) and some explorations:
+
+* Note: I think citations+1 could be reasonable to use here since it would count the current paper in the count to define a "publications involving this paper response" or "pubs" defined below.
+
+* The following R code was only run once to get the data set loaded and take a simple random sample of n=2,000 papers to analyze further.
+
+* They archived their work is an R package but some of it became buggy with changes to R and some packages, so the following code is what I used a few years ago to get the data set prepared:
+
+```{r eval=F}
+install.packages('remotes') 
+remotes::install_github('polynumeral/academia-citations/acadcites')
+suppressMessages(library('acadcites'))
+cites <- importData()
+#More typical:
+#library(readr); #cites <- read_csv("C:/cites.csv") #Or read.csv
+
+dim(cites)
+ids <- 1:dim(cites)[1]
+set.seed(1234) #Use so always get the same random sample from the original data set
+
+#Randomly sample n=2,000 papers to analyze:
+cites_sample <- cites[sample(ids,2000),]
+
+library(readr)
+write_csv(cites_sample,"cites_sample.csv")
+```
+
+* This is the "real" code:
+
+```{r}
+library(tidyverse)
+library(readr)
+cites_sample <- read_csv("cites_sample.csv") #Or read.csv
+#Works if data set is stored in same location as .Rmd file
+head(cites_sample)
+
+cites_sample <- cites_sample %>% mutate(on_acad = factor(on_acad),
+                                        online = factor(online)) #Otherwise treated as quantitative variables
+summary(cites_sample$on_acad)
+
+#Change labels to be more explicit:
+levels(cites_sample$on_acad) <- c("NotOn", "On")
+summary(cites_sample$on_acad)
+
+levels(cites_sample$online) <- c("NotOn", "On")
+```
+
+
+## Modeling citations: Linear model version
+
+```{r warning=F,message=F, fig.width=7, fig.height=2.5}
+par(mfrow=c(1,2)) #Figure 3: Plot of log(citations+1)~log(impactfactor+1) 
+plot(citations ~ impact_factor, data = cites_sample)
+cites_sample <- cites_sample %>%
+  mutate(log1p_citations = log1p(citations),
+                           log1p_impact_factor = log1p(impact_factor)
+         )
+plot(log1p_citations ~ log1p_impact_factor, data = cites_sample) 
+```
+
+* Reading in a png file from when their code worked 
+
+```r
+![Figure 1. log-log plot with smoother.](loglogplot.png)
+```
+
+![Figure 1. log-log plot with smoother.](loglogplot.png)
+
+## Grammar of Graphics
+
+* Some basics of `ggplot2` 
+
+* Their plot was made using ggplot2 but our previous plots were made using what is called "base R" graphics
+
+* The `ggplot2` package which was 
+built to implement a type of grammar for making and layering graphical displays 
+of data, adding each layer step by step, and allowing complete control of all aspects of the plot.  
+
+* As opposed to base graphics, the ggplots will contain multiple components 
+that are patched together with a `+`, with the general format of 
+`ggplot(data = <DATA>, mapping = aes(<VARIABLE MAPPINGS>)) + <GEOM_FUNCTION>()`. 
+
+* Breaking this down, the `data = ...` tells the `ggplot` function where to look, 
+the information inside the `aes` (or aesthetic) defines which variables in the 
+data set to use and how to use them (often with `x = variable1`, 
+`y = variable2`, etc., with `x = ...` for the variable on the x (horizontal) 
+axis and `y = ...` for the variable on the y (vertical) axis), 
+
+* and the `+ <GEOM_FUNCTION>()` defines which type of graph to make (there are 
+`geom_point` or `geom_jitter` and `geom_smooth` to make the previous scatterplot and add a smoothing line. 
+
+    - Instead of the `data = ...` you can also use piping to pass the data set to `ggplot` using either (if you have R $\geq$ 4.1.0) `datasetname |> ggplot(mapping = aes(...))` or (if you have `tidyverse` or `magrittr` loaded) `datasetname %>% ggplot(mapping = aes())`
+    
+* Because we often have many "+"'s to include, the common 
+practice is to hit return after each "+" and start the next layer or option on 
+the following line for better readability. 
+
+
+```{r  fig.cap="Re-making the figure using ggplot2"}
+library(ggplot2)
+
+p1 <- cites_sample %>% 
+  ggplot(mapping = aes(y = log1p_citations, x = log1p_impact_factor)) +
+        geom_point(mapping = aes(col = year), alpha = 0.5) +
+        geom_smooth(method = "lm") +
+        geom_smooth(col = "red", lty = 2, se = F) +
+        theme_light() +
+        labs(x = "log-Impact factor plus 1",
+             y = "log-citations plus 1",
+             title = "Plot of ... colored based on year")
+p1
+```
+
+* Please always change the them from the basic graphic for me using one of a suite of different 
+layouts with themes such as `+ theme_bw()` or `+ theme_light()` or ... If you add the 
+`ggthemes` package, you can access a long list of alternative looks 
+for your plot (see https://jrnold.github.io/ggthemes/reference/index.html for 
+options there). 
+
+* We can also combine multiple panels (from one data set split on a variable) using facets (coming soon) or by making and saving each plot and combining using the `gridExtra` package (`p1` with `p2` using `grid.arrange(p1, p2, ncol = 1)`) .
+
+* But was logging really necessary? 
+
+```{r fig.width = 8, fig.height = 8}
+p2 <- cites_sample %>% 
+  ggplot(mapping = aes(y = citations, x = impact_factor)) +
+        geom_point(mapping = aes(col = year), alpha = 0.5) +
+        geom_smooth(method = "lm") +
+        geom_smooth(col = "red", lty = 2, se = F) +
+        theme_light() +
+        labs(x = "Impact factor",
+             y = "Citations",
+             title = "Plot of ...")
+library(gridExtra)
+grid.arrange(p1, p2, ncol = 1)
+```
+
+
+* We will also want to explore impacts of age, online access/not, academia/not on citations
+
+    - `geom_violin() + geom_jitter()` gets us started for a quantitative response versus a categorical variable
+    
+    - Color blind friendly color themes are also recommended, like those in `viridis` or in ggthemes - the `scale_color_colorblind`
+
+```{r fig.width=10, fig.height=5}
+library(ggthemes)
+p3 <- cites_sample %>% ggplot(aes(x = age, y = citations)) +
+                      geom_jitter(alpha = 0.2) +
+                      geom_smooth(method = "lm") +
+                      geom_smooth(col = "tomato", lty = 2) +
+                      theme_bw()
+
+p4 <- cites_sample %>% ggplot(aes(x = online, y = citations)) +
+                      geom_violin(alpha = 0.3) +
+                      geom_jitter(aes(col = on_acad)) +
+                      theme_bw() +
+                      scale_color_colorblind()
+
+p5 <- cites_sample %>% ggplot(aes(x = on_acad, y = citations)) +
+                      geom_violin(alpha = 0.4) +
+                      geom_jitter(aes(col = online), alpha = 0.1) +
+                      theme_bw() + 
+                      scale_color_colorblind()
+
+grid.arrange(p3, p4, p5, ncol = 3)
+
+#Base R sort of equivalent:
+#plot(citations ~ impact_factor + age + on_acad + online, data = cites_sample)   
+```
+
+* And now we can fit a preliminary model with `citations` as the response and the four potential predictor variables:
+
+```{r}
+model1 <- lm(citations ~ impact_factor + age + on_acad + online, data = cites_sample)
+summary(model1)
+library(gtsummary)
+model1 %>% tbl_regression() %>% add_global_p() #An interesting enhanced `summary`
+par(mfrow=c(2,2))
+plot(model1, pch = 16)
+```
+
+* So there appear to be clear issues with the normality assumption for the residuals (QQ-plot shows severely right skewed residuals which is evidence of a violation of the normality of residuals assumption) 
+
+* Note: **DO NOT USE THE WORD "DATA"** when discussing QQ-plots from a model - be specific and note that this assesses whether the **residuals $\sim Normal$** 
+    
+* Also, 3 residuals are always identified in R's diagnostic plot array (you can change this default). That does not mean they are problematic or outliers!
+
+* Non-constant variance issues suggested in the Residuals vs Fitted and Scale-Location plots because of increasing spread in the residuals as the fitted values increase. So evidence of a violation of the constant variance assumption.
+
+* More on Residuals vs Leverage plot later...
+
+Starting with a simple model with `log(pubs)` response and `impact_factor` and `on_acad` as predictors:
+
+* Theoretical model: $log(pubs) \sim N(\mu,\sigma^2)$ 
+
+* with $\mu\{log(pubs)|impact-factor,on-acad\}=\beta_0+\beta_1impactfactor+\beta_2I_{on-acad=T}$
+
+    - With the indicator (or dummy) variable $I_{onacad=T}$ equal to 1 if a paper was put onto academia.edu and 0 otherwise.
+
+```{r}
+cites_sample <- cites_sample %>% rename(logpubs = log1p_citations)
+
+model2 <- lm(logpubs ~ impact_factor + on_acad, data = cites_sample) 
+summary(model2)
+confint(model2) #Obtain 95% confidence intervals for the parameters
+```
+
+* Estimated model: $\hat{\mu}\{log(pubs)|impact-factor,on-acad\}=1.385+0.151impactfactor+0.21I_{onacad=On}$
+
+* Interps of the two slope coefficients on log-response scale:  
+
+    - ImpactFactor: For a 1 "point" increase in impact factor, the estimated mean log(publication) changes by 0.151 log-pubs, controlled for being published on academia.edu or not (95% CI: 0.137 to 0.165). 
+
+    - On_Acad: Being posted to academia.edu is related to having an estimated mean 0.21 log-pubs higher than papers not posted there, controlling for impact factor of the journals (95% CI: 0.098 to 0.324).
+
+* Or on the original "pubs" scale - need to $exp(\hat{\beta}_i)$ to get multiplicative changes in median:
+
+    - ImpactFactor: For a 1 point increase in impact factor, the estimated median publication is `r round(exp(0.151),3)` times more, controlled for being published on academia.edu or not (95% CI: exp(0.137) to exp(0.165)). 
+    
+    - On_Acad: Being posted to academia.edu is related to having an estimated **median** "pubs" that are `r round(exp(0.21),3)` times higher than papers not posted there, controlling for impact factor of the journals (95% CI: exp(0.098) to exp(0.324)).
+
+* Reporting of the two test results ("evidence" sentences):
+
+    - There is strong evidence against the null hypothesis of no impact of _impact factor_ on the mean log-publications ($t_{1997}=20.71$, two-sided p-value=0.0001) after controlling for publication on academia.edu/not, so we would conclude that there is an impact of _impact factor_ on the response.
+    
+    - There is strong evidence against the null hypothesis of no difference in mean log-publications based on posting to academia.edu/not ($t_{1997}=3.67$, two-sided p-value=0.00025) after controlling for impact factor of the journal, so we would conclude that there is some difference in mean log-publications based on posting to academia/not.
+    

@@ -1,0 +1,41 @@
+h1:chapter2 Linear Models: A Review
+h2:section2-1 Linear regression models, assumptions
+fig:Figure2-1 (ref:fig2-1)
+fig:Figure2-2 (ref:fig2-2)
+fig:Figure2-3 (ref:fig2-3)
+h2:section2-2 Pirate-plots
+fig:Figure2-4 (ref:fig2-4)
+fig:Figure2-5 (ref:fig2-5)
+h2:section2-3 Models, hypotheses, and permutations for the two sample mean situation
+fig:Figure2-6 (ref:fig2-6)
+fig:Figure2-7 (ref:fig2-7)
+h2:section2-4 Permutation testing for the two sample mean situation
+fig:Figure2-8 (ref:fig2-8)
+fig:Figure2-9 (ref:fig2-9)
+fig:Figure2-10 (ref:fig2-10)
+fig:Figure2-11 (ref:fig2-11)
+h2:section2-5 Hypothesis testing (general)
+h2:section2-6 Connecting randomization (nonparametric) and parametric tests
+fig:Figure2-12 (ref:fig2-12)
+fig:Figure2-13 (ref:fig2-13)
+fig:Figure2-14 (ref:fig2-14)
+fig:Figure2-15 (ref:fig2-15)
+h2:section2-7 Second example of permutation tests
+fig:Figure2-16 (ref:fig2-16)
+fig:Figure2-17 (ref:fig2-17)
+h2:section2-8 Reproducibility Crisis: Moving beyond p < 0.05, publication bias, and multiple testing issues
+fig:Figure2-18 (ref:fig2-18)
+fig:Figure2-19 (ref:fig2-19)
+fig:Figure2-20 (ref:fig2-20)
+fig:Figure2-21 (ref:fig2-21)
+h2:section2-9 Confidence intervals and bootstrapping
+fig:Figure2-22 (ref:fig2-22)
+fig:Figure2-23 (ref:fig2-23)
+fig:Figure2-24 (ref:fig2-24)
+fig:Figure2-25 (ref:fig2-25)
+h2:section2-10 Bootstrap confidence intervals for difference in GPAs
+fig:Figure2-26 (ref:fig2-26)
+h2:section2-11 Chapter summary
+h2:section2-12 Summary of important R code
+h2:section2-13 Practice problems
+

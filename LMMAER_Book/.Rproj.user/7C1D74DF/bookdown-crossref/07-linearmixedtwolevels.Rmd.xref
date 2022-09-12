@@ -1,0 +1,13 @@
+h1:chapter7 Linear Mixed Models (Two-levels)
+h2:section7-1 Situation
+h3:sub-sub-section-section7-1-1 Sub-sub section? {section7-1-1}
+h2:section7-2 Random intercept
+h2:section7-3 Comparing fixed to random effect grouping variable
+h2:section7-4 Design effect, variation explained, and intra-class correlation
+h2:section7-5 Random intercept and random slope
+h2:section7-6 Inference for fixed and random effects
+h2:section7-7 Decomposing fixed effects: aggregating and centering
+h2:section7-8 Diagnostics for linear mixed models
+h2:section7-9 Curvature and random slopes
+h2:section7-10 Multiple (pair-wise) comparisons using Tukey’s HSD and the compact letter display
+

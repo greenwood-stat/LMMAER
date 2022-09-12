@@ -1,0 +1,10 @@
+h1:chapter12 Generalized linear models
+h2:section12-1 Situation
+h2:section12-2 Binary logistic regression
+h2:section12-3 GLM estimation and the woes of logistic regression
+h2:section12-4 Grouped binomial regression
+h2:section12-5 Poisson and Poisson rate regression
+h2:section12-6 Overdispersion and separation in count models
+h2:section12-7 Zero-truncated/zero-inflated models
+h2:section12-8 Multiple (pair-wise) comparisons using Tukey’s HSD and the compact letter display
+
